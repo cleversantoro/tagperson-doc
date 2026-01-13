@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: tagperson-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tagperson
+      MYSQL_USER: tagperson
+      MYSQL_PASSWORD: tagperson
+    ports:
+      - "3306:3306"
+    volumes:
+      - tagperson_mysql:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+
+volumes:
+  tagperson_mysql:
