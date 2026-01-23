@@ -806,16 +806,16 @@ CREATE TABLE `combate_grupo` (
 --
 
 INSERT INTO `combate_grupo` (`id`, `id_pai`, `nome`) VALUES
-(1, 1, 'Técnicas de Combate (Básicas)'),
-(4, 2, 'Guerreiros'),
-(5, 3, 'Ladinos'),
-(6, 2, 'Guerreiros - Academia de Infantaria'),
-(7, 2, 'Guerreiros - Academia dos Arqueiros'),
-(8, 2, 'Guerreiros - Academia dos Cavaleiros'),
-(9, 2, 'Guerreiros - Academia dos Gladiadores'),
-(10, 3, 'Ladinos - Guilda dos Assassinos'),
-(11, 3, 'Ladinos - Guilda dos Ladrões'),
-(12, 3, 'Ladinos - Guilda dos Piratas');
+(1, 0,  'Técnicas de Combate (Básicas)'),
+(4, 1,  'Guerreiros'),
+(5, 2,  'Ladinos'),
+(6, 2,  'Academia de Infantaria'),
+(7, 2,  'Academia dos Arqueiros'),
+(8, 2,  'Academia dos Cavaleiros'),
+(9, 2,  'Academia dos Gladiadores'),
+(10, 3, 'Guilda dos Assassinos'),
+(11, 3, 'Guilda dos Ladrões'),
+(12, 3, 'Guilda dos Piratas');
 
 -- --------------------------------------------------------
 
