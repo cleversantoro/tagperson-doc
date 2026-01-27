@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-server
--- Tempo de geração: 15/01/2026 às 20:27
+-- Tempo de geração: 27/01/2026 às 08:34
 -- Versão do servidor: 8.0.44
 -- Versão do PHP: 8.3.26
 
@@ -36,6 +36,11 @@ CREATE TABLE `caracterizacao` (
   `observacoes` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Tabela truncada antes do insert `caracterizacao`
+--
+
+TRUNCATE TABLE `caracterizacao`;
 --
 -- Despejando dados para a tabela `caracterizacao`
 --
@@ -296,6 +301,11 @@ CREATE TABLE `caracterizacao_grupo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `caracterizacao_grupo`
+--
+
+TRUNCATE TABLE `caracterizacao_grupo`;
+--
 -- Despejando dados para a tabela `caracterizacao_grupo`
 --
 
@@ -380,6 +390,11 @@ CREATE TABLE `caracterizacao_grupo_custo` (
   `permite_durante_jogo` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Tabela truncada antes do insert `caracterizacao_grupo_custo`
+--
+
+TRUNCATE TABLE `caracterizacao_grupo_custo`;
 --
 -- Despejando dados para a tabela `caracterizacao_grupo_custo`
 --
@@ -640,6 +655,11 @@ CREATE TABLE `caracterizacao_tipo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Tabela truncada antes do insert `caracterizacao_tipo`
+--
+
+TRUNCATE TABLE `caracterizacao_tipo`;
+--
 -- Despejando dados para a tabela `caracterizacao_tipo`
 --
 
@@ -663,6 +683,11 @@ CREATE TABLE `categoria` (
   `icon` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `categoria`
+--
+
+TRUNCATE TABLE `categoria`;
 --
 -- Despejando dados para a tabela `categoria`
 --
@@ -688,6 +713,11 @@ CREATE TABLE `classe_social` (
   `is_default` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Tabela truncada antes do insert `classe_social`
+--
+
+TRUNCATE TABLE `classe_social`;
 --
 -- Despejando dados para a tabela `classe_social`
 --
@@ -724,68 +754,73 @@ CREATE TABLE `combate` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `combate`
+--
+
+TRUNCATE TABLE `combate`;
+--
 -- Despejando dados para a tabela `combate`
 --
 
 INSERT INTO `combate` (`id`, `id_combate_grupo`, `id_categoria`, `nome`, `atributo`, `efeito`, `requisitos`, `obs`, `quadro_rolagem`, `aprimoramento`, `bonus`, `possui_especializacao`) VALUES
-(1, 3, 5, 'Ajustar Disparo', 'PER', 'Quando um arqueiro erra um disparo, este é capaz de ajustar o próximo para fazê-lo com mais precisão.', 'Imprevisibilidade e Mira.', 'Obs1:O tempo de intervalo entre o disparo perdido e o disparo ajustado não pode ultrapassar a rodada após o uso da técnica para que o combatente receba os benefícios desta técnica|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica podem usá-la após uma técnica defensiva do inimigo que tenha tornado inefetivo (anulado) completamente um ataque seu.', NULL, NULL),
-(2, 3, 2, 'Ambidestria', '-', 'Ambidestria é uma técnica que tem como sua de sua finalidade principal permitir que o combatente utilize duas armas de baixo peso (Combate Desarmado, Grupos Leves e/ou Médios) para atacar com as duas mãos de forma quase simultânea.', 'N/D', 'Obs1:Esta técnica possui Imperícia.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem refinar as capacidades de utilizar as duas mãos (fora do combate) de forma concomitante para qualquer finalidade corriqueira como (desenhar, escrever, prestidigitar etc.).', -1, 0),
-(3, 3, 3, 'Animosidade', 'FIS', 'Seja pela sua postura em combate, temperamento natural, ideais e/ou outros fatores, alguns guerreiros possuem um fulgor instintivo que vem à tona durante a possibilidade de cada nova batalha. Essa técnica é utilizada para treinar e avivar essa(s) característica(s) fisicamente durante o combate, através de uma explosão de energia e adrenalina.', 'N/D', 'Obs1:Esta técnica possui Limite Diário|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem triplicar o total ao invés de duplicar.', NULL, NULL),
-(4, 3, 6, 'Aparar', 'FOR', 'Aparar é uma técnica brutal, que visa o contrapor de forças, a fim de reduzir o dano recebido, podendo até mesmo chegar a anular o golpe sofrido.', 'N/D', 'Obs1:Caso o jogador perceba que será atacado e não esteja em um combate, este poderá usar esta técnica sem necessidade de anúncio. Esta técnica possui Ignorar à Iniciativa.|Obs2:|Obs3:', 'N/D', 'Aprimorados em Aparar conseguem causar (1) nível a mais de dano no uso da técnica.', -1, 0),
+(1, 7, 5, 'Ajustar Disparo', 'PER', 'Quando um arqueiro erra um disparo, este é capaz de ajustar o próximo para fazê-lo com mais precisão.', 'Imprevisibilidade e Mira.', 'Obs1:O tempo de intervalo entre o disparo perdido e o disparo ajustado não pode ultrapassar a rodada após o uso da técnica para que o combatente receba os benefícios desta técnica|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica podem usá-la após uma técnica defensiva do inimigo que tenha tornado inefetivo (anulado) completamente um ataque seu.', NULL, NULL),
+(2, 1, 2, 'Ambidestria', '-', 'Ambidestria é uma técnica que tem como sua de sua finalidade principal permitir que o combatente utilize duas armas de baixo peso (Combate Desarmado, Grupos Leves e/ou Médios) para atacar com as duas mãos de forma quase simultânea.', 'N/D', 'Obs1:Esta técnica possui Imperícia.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem refinar as capacidades de utilizar as duas mãos (fora do combate) de forma concomitante para qualquer finalidade corriqueira como (desenhar, escrever, prestidigitar etc.).', -1, 0),
+(3, 8, 3, 'Animosidade', 'FIS', 'Seja pela sua postura em combate, temperamento natural, ideais e/ou outros fatores, alguns guerreiros possuem um fulgor instintivo que vem à tona durante a possibilidade de cada nova batalha. Essa técnica é utilizada para treinar e avivar essa(s) característica(s) fisicamente durante o combate, através de uma explosão de energia e adrenalina.', 'N/D', 'Obs1:Esta técnica possui Limite Diário|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem triplicar o total ao invés de duplicar.', NULL, NULL),
+(4, 1, 6, 'Aparar', '-', 'Aparar é uma técnica brutal, que visa o contrapor de forças, a fim de reduzir o dano recebido, podendo até mesmo chegar a anular o golpe sofrido.', 'N/D', 'Obs1:Caso o jogador perceba que será atacado e não esteja em um combate, este poderá usar esta técnica sem necessidade de anúncio. Esta técnica possui Ignorar à Iniciativa.|Obs2:|Obs3:', 'N/D', 'Aprimorados em Aparar conseguem causar (1) nível a mais de dano no uso da técnica.', -1, 0),
 (5, 3, 3, 'Aprimorar', '-', 'Através de um treinamento aprimorado, cada movimento é exaustivamente aperfeiçoado, desenvolvendo uma habilidade descomunal no manuseio de seu grupamento preferido, conferindo-lhe vastos benefícios, tanto no combate corpo a corpo, quanto à distância, aumentando sua precisão nos golpes, letalidade e ritmo de combate.', 'N/D', 'Obs1:O grupo de armas escolhido passa a custar 2 pontos extras.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica podem escolher um segundo grupo de armas e têm o intervalo para o golpe extra diminuído de três rodadas para duas rodadas.', NULL, NULL),
-(6, 3, 5, 'Ataque Oportuno', 'PER', 'O ataque oportuno maximiza a efetividade e os danos causados, visando acertar pontos vulneráveis da defesa de adversários que estejam em situações desvantajosas.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica ganham bônus de mais (1) nível em qualquer rolamento em conjunto com esta técnica.', 6, 0),
+(6, 1, 5, 'Ataque Oportuno', 'PER', 'O ataque oportuno maximiza a efetividade e os danos causados, visando acertar pontos vulneráveis da defesa de adversários que estejam em situações desvantajosas.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica ganham bônus de mais (1) nível em qualquer rolamento em conjunto com esta técnica.', 6, 0),
 (7, 3, 7, 'Atirar em Movimento', 'AGI', 'Com esta técnica o combatente será capaz de efetuar ataques em qualquer direção enquanto estiver movimentando-se rapidamente.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'Verde: A imprecisão dos movimentos impede de efetuar seus ataques durante esta rodada.Branco: É possível efetuar seus ataques somente para frente e com -4 colunas durante qualquer tipo de corrida.Amarelo: É possível efetuar seus ataques em qualquer direção à frente e/ou lateral durante uma corrida de fundo.Laranja: É possível efetuar seus ataques em qualquer direção à frente e/ou lateral durante uma corrida curta.Vermelho: É possível efetuar seus ataques em qualquer direção durante uma corrida de fundo.Azul: É possível efetuar seus ataques em qualquer direção durante uma corrida curta.Cinza: É possível efetuar um ataque para qualquer lado e usar sua velocidade de movimento total (sem redutores) nesta rodada.', 'Aprimorados nesta técnica ganham (1) nível nos resultados de suas rolagens e podem fazer qualquer habilidade na área de Manobra concomitantemente aos seus ataques.', 5, 0),
 (8, 3, 2, 'Atravessar o Oponente', 'FIS', 'Quando seu adversário estiver atordoado, caído, desequilibrado, incapacitado, sonolento, tiver tropeçado e outras situações a critério do Mestre, o guerreiro pode na mesma rodada se movimentar e efetuar um ataque extra em um alvo próximo.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'Verde: O guerreiro não consegue avançar para usar a técnica. Branco: O guerreiro consegue avançar e acertar um oponente extra com -4 colunas no seu ataque.Amarelo: O guerreiro consegue avançar e acertar um oponente extra.Laranja: O guerreiro consegue avançar e acertar até dois oponentes extras.Vermelho: O guerreiro consegue avançar e acertar até três oponentes extras.Azul: O guerreiro consegue avançar e acertar até quatro oponentes extras.Cinza: O guerreiro consegue avançar e acertar até cinco oponentes extras.', 'Aprimorados nesta técnica adicionam um alvo extra a cada rolagem.', NULL, NULL),
-(9, 3, 1, 'Brutalizar', 'FOR', 'O combatente é capaz de maximizar a potência de seus golpes abdicando de sua precisão.', 'N/D', 'Obs1:A quantidade de colunas que se pode converter com esta técnica deve ser igual ou menor que o total que se possui na mesma.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica dobram a quantidade de pontos de dano após a conversão.', NULL, NULL),
-(10, 3, 5, 'Carga', 'FIS', 'Uma das técnicas mais usadas pelos combatentes da antiguidade é a Carga, que consiste em utilizar o impulso da corrida para desferir um violento golpe.', 'N/D', 'Obs1:Esta técnica possui Intermitência. Criaturas quadrúpedes atacando com armas naturais recebem os bônus em dobro nesta técnica e o teste de Físico da vítima passa a ser Vermelho (Difícil).|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termos 100%, Dobro e Laranja (Médio)respectivamente substituídos por 75%, Triplo e Azul (Muito Difícil).', -1, 0),
+(9, 9, 1, 'Brutalizar', 'FOR', 'O combatente é capaz de maximizar a potência de seus golpes abdicando de sua precisão.', 'N/D', 'Obs1:A quantidade de colunas que se pode converter com esta técnica deve ser igual ou menor que o total que se possui na mesma.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica dobram a quantidade de pontos de dano após a conversão.', NULL, NULL),
+(10, 1, 5, 'Carga', 'FIS', 'Uma das técnicas mais usadas pelos combatentes da antiguidade é a Carga, que consiste em utilizar o impulso da corrida para desferir um violento golpe.', 'N/D', 'Obs1:Esta técnica possui Intermitência. Criaturas quadrúpedes atacando com armas naturais recebem os bônus em dobro nesta técnica e o teste de Físico da vítima passa a ser Vermelho (Difícil).|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termos 100%, Dobro e Laranja (Médio)respectivamente substituídos por 75%, Triplo e Azul (Muito Difícil).', -1, 0),
 (11, 3, 5, 'Carga de Arremesso', 'FOR', 'Esta técnica permite ao combatente aproveitar-se das técnicas \"Carga\" e \"Carga Montada\" para projetar armas arremessáveis com uma força e precisão maiores que a normal.', 'Carga ou Carga Montada.', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica têm (1) nível a mais em seus arremessos.', -1, 0),
-(12, 3, 5, 'Carga Montada', 'FIS', 'A Carga Montada consiste em aumentar o impacto do ataque ao conduzir a montaria a toda velocidade em direção a seu oponente e golpear aproveitando o impulso da corrida.', 'A montaria deve percorrer uma distância (em metros) que seja equivalente à metade da sua velocidade base não pode ser usado com armas leves ou projéteis.', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termos 100%, Vermelho (Difícil) e Dobro respectivamente substituídos por 75%, Azul (Muito Difícil) e Triplo.', -1, 0),
-(13, 3, 7, 'Centaurizar', 'PER', 'Alguns talentosos cavaleiros passam por um treinamento incomum e aprendem como nortear com perfeição suas montarias em combate, conduzindo-as com uma maestria invejável. Esses nobres cavaleiros recebem o título de “Centauros” em seus grupamentos como honraria.', 'Carga Montada e Combate Montado.', 'Obs1:Montarias que não são treinadas para a guerra só podem receber o bônus na EH.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem dobrar os bônus de Colunas, Dano e EH concedidos a montaria através desta técnica.', NULL, NULL),
-(14, 3, 4, 'Combate com Arco', 'AGI', 'Esta técnica permite ao combatente efetuar disparos em um combate corpo a corpo.', 'N/D', 'Obs1:Não é necessário usar esta técnica para efetuar disparos em alvos fora da zona de um combate corporal mesmo que o combatente esteja em um combate corpo a corpo com outro inimigo.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termos em negrito no texto Amarelo (Fácil) respectivamente substituídos por Branco (Rotineiro).', 5, 0),
+(12, 8, 5, 'Carga Montada', 'FIS', 'A Carga Montada consiste em aumentar o impacto do ataque ao conduzir a montaria a toda velocidade em direção a seu oponente e golpear aproveitando o impulso da corrida.', 'A montaria deve percorrer uma distância (em metros) que seja equivalente à metade da sua velocidade base não pode ser usado com armas leves ou projéteis.', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termos 100%, Vermelho (Difícil) e Dobro respectivamente substituídos por 75%, Azul (Muito Difícil) e Triplo.', -1, 0),
+(13, 8, 7, 'Centaurizar', 'PER', 'Alguns talentosos cavaleiros passam por um treinamento incomum e aprendem como nortear com perfeição suas montarias em combate, conduzindo-as com uma maestria invejável. Esses nobres cavaleiros recebem o título de “Centauros” em seus grupamentos como honraria.', 'Carga Montada e Combate Montado.', 'Obs1:Montarias que não são treinadas para a guerra só podem receber o bônus na EH.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem dobrar os bônus de Colunas, Dano e EH concedidos a montaria através desta técnica.', NULL, NULL),
+(14, 1, 4, 'Combate com Arco', '-', 'Esta técnica permite ao combatente efetuar disparos em um combate corpo a corpo.', 'N/D', 'Obs1:Não é necessário usar esta técnica para efetuar disparos em alvos fora da zona de um combate corporal mesmo que o combatente esteja em um combate corpo a corpo com outro inimigo.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termos em negrito no texto Amarelo (Fácil) respectivamente substituídos por Branco (Rotineiro).', 5, 0),
 (15, 3, 6, 'Combate com Escudo', 'FOR', 'Esta técnica permite que o combatente use o escudo com maior eficácia, possibilitando-o atacar com o mesmo e defender-se de forma aprimorada.', 'N/D', 'Obs1:Ataques críticos (Cinza) só podem ser absorvidos por esta técnica se o jogador que está usando esta técnica conseguir um resultado crítico (Cinza). Caso o jogador perceba que será atacado e não esteja em um combate, este poderá usar esta técnica sem necessidade de anúncio nesta rodada.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica têm a Defesa Base do seu escudo duplicado. Valerie está usando um Escudo Médio (Defesa Base +1). Ao se aprimorar nesta técnica o Escudo de Valerie passa a conceder +2 na sua Defesa Base ao invés de +1.', 5, 0),
-(16, 3, 3, 'Combate Montado', 'FIS', 'Combater sobre uma forte montaria é uma tática usada desde o 2º Ciclo e confere ao combatente experiente grandes benefícios, permitindo-lhe efetuar ataques corpo a corpo ou à distância, estando a montaria parada ou em movimento. Entretanto, lutar enquanto se monta um animal também pode ser uma desvantagem, pois animais não treinados para o combate se assustam facilmente.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica não precisam efetuar rolamentos da habilidade Montar Animais para fazer uso desta técnica.', -1, 0),
-(17, 3, 1, 'Combate não Letal', 'PER', 'Esta técnica confere ao combatente a capacidade de subjugar um oponente sem matá-lo.', 'N/D', 'Obs1:O efeito de deixar seu alvo inconsciente sobrepõe qualquer efeito (não mágico) que permita ou fosse permitir o contrário.|Obs2:|Obs3:', '', 'Aprimorados em Combate não Letal ganham (1) nível nos resultados de suas rolagens e o resultado Azul (Muito Difícil) torna-se Cinza (Crítico).', 6, 0),
-(18, 3, 3, 'Concentração', 'INT', 'Esta técnica demonstra o ápice do controle da mente sobre o corpo, permitindo ao usuário manter-se focado em suas evocações e/ou testes mesmo sobre as situações mais adversas, desfavoráveis e perigosas possíveis.', '', 'Obs1:Ao adentrarem nos colégios e confrarias, os místicos podem usar o Aprimoramento desta técnica.|Obs2:|Obs3:', '', 'esta técnica não possui Aprimoramentos.', NULL, NULL),
+(16, 1, 3, 'Combate Montado', '-', 'Combater sobre uma forte montaria é uma tática usada desde o 2º Ciclo e confere ao combatente experiente grandes benefícios, permitindo-lhe efetuar ataques corpo a corpo ou à distância, estando a montaria parada ou em movimento. Entretanto, lutar enquanto se monta um animal também pode ser uma desvantagem, pois animais não treinados para o combate se assustam facilmente.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica não precisam efetuar rolamentos da habilidade Montar Animais para fazer uso desta técnica.', -1, 0),
+(17, 1, 1, 'Combate não Letal', '-', 'Esta técnica confere ao combatente a capacidade de subjugar um oponente sem matá-lo.', 'N/D', 'Obs1:O efeito de deixar seu alvo inconsciente sobrepõe qualquer efeito (não mágico) que permita ou fosse permitir o contrário.|Obs2:|Obs3:', '', 'Aprimorados em Combate não Letal ganham (1) nível nos resultados de suas rolagens e o resultado Azul (Muito Difícil) torna-se Cinza (Crítico).', 6, 0),
+(18, 1, 3, 'Concentração', '-', 'Esta técnica demonstra o ápice do controle da mente sobre o corpo, permitindo ao usuário manter-se focado em suas evocações e/ou testes mesmo sobre as situações mais adversas, desfavoráveis e perigosas possíveis.', '', 'Obs1:Ao adentrarem nos colégios e confrarias, os místicos podem usar o Aprimoramento desta técnica.|Obs2:|Obs3:', '', 'esta técnica não possui Aprimoramentos.', NULL, NULL),
 (19, 3, 7, 'Conduzir o Oponente', 'PER', 'Por meio de uma postura impositiva, passos de ajuste, desvios, golpes pesados ou ágeis, um combatente estrategista consegue, pouco a pouco, mudar o seu oponente de lugar, levando-o a uma posição desfavorável, em uma espécie elegante de dança envolvendo a postura de seus pés, equilíbrio, e suas armas.', 'N/D', 'Obs1:|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm suas rolagens aumentadas em (1) nível e mais 2 metros em todos os resultados funcionais.', NULL, NULL),
-(20, 3, 5, 'Contra-Ataque', 'AGI', 'Usando astúcia, audácia, flexibilidade, rapidez e oportunismo, alguns combatentes aproveitam-se habilmente das brechas criadas e/ou fornecidas por seus oponentes, sendo considerados mestres na arte de contra-atacar.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:|Obs3:', '', 'Esta técnica pode ser usada após outras manobras ou técnicas defensivas que tenham levado o oponente a um resultado Verde (Falha), Branco (Rotineiro) ou tenham reduzido totalmente o dano recebido.', NULL, NULL),
-(21, 3, 1, 'Dano Agravado', 'FOR', 'Com a experiência de inumeráveis batalhas, todo guerreiro acaba convertendo seu aprendizado em conhecimento. Alguns aprimoram essa experiência de modo a desferir golpes mais efetivos e mortais. Essa técnica é a síntese de toda essa sabedoria.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:Está técnica só pode ser usada se o total nela for igual ou maior que o estágio do personagem.|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termos em negrito no texto (1) nível a menos, respectivamente substituídos por (2) níveis a menos.', NULL, NULL),
-(22, 3, 2, 'Defletir Ataque', 'PER', 'Algumas vezes, quando uma pessoa passa muito tempo estudando um ser vivo, acaba por entender os padrões de movimento e de dobras de suas articulações. Com um treinamento mais severo, aliado a uma acuidade visual acima do senso comum, é possível controlar através da expressão corporal os movimentos instintivos de outros, por uma fração de segundo. Esse curto intervalo de tempo é o suficiente para desestabilizar o equilíbrio do alvo.', 'N/D', 'Obs1:Esta técnica só funciona corpo a corpo com alvo e não pode ser usada contra armas que tenham sido arremessadas, projéteis de besta ou arco.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica convertem um terço do total que se possuem nesta técnica será adicionado a sua FD.', NULL, NULL),
-(23, 3, 7, 'Desequilibrar', 'FOR', 'Esta técnica permite ao combatente aplicar um forte golpe em seu adversário desequilibrando-o.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica têm os termos em negrito no texto Triplo respectivamente substituído por', -1, 0),
-(24, 3, 6, 'Desviar', 'AGI', 'Esta técnica visa utilizar o golpe do adversário a seu favor, desviando a trajetória do ataque com sua própria arma.', 'N/D', 'Obs1:Ataque Cinza (Crítico) só pode ser defendido com um rolamento Cinza (Crítico).|Obs2:Caso o jogador perceba que será atacado e não esteja em um combate, este poderá usar esta técnica sem necessidade de anúncio.|Obs3:Esta técnica possui', 'N/D', 'Aprimorados em Desviar conseguem (1) nível a mais na rolagem desta técnica.', NULL, NULL),
-(25, 3, 7, 'Direcionamento', 'PER', 'Alguns combatentes são conhecidos pela sua capacidade de acertar um alvo mesmo nas condições mais adversas, e a técnica Direcionamento é o que lhes valeu esta fama. Chuva, ventos, tremores, distância ou mesmo alvos sob proteção não são empecilhos para aqueles que dominarem esta técnica, a qual consiste em prever e anular quaisquer efeitos que possam desviar a trajetória da flecha. Enquanto um combatente comum dispararia uma flecha em uma tempestade e o vento a jogaria para longe, um combatente treinado desvia um pouco a mira e usa o vento para atingir o alvo que queria.', 'N/D', 'Obs1:|Obs2:|Obs3:', '-.', 'Aprimorados nesta técnica anulam duas colunas de penalidade para cada ponto nesta técnica.', 6, 0),
-(26, 3, 2, 'Disparo Certeiro', 'PER', 'Com esta técnica, o arqueiro pode fazer com que o oponente fique imobilizado parcialmente, tropece ou mesmo pode causar um ferimento grave.', '-.', 'Obs1:|Obs2:|Obs3:', '', '', NULL, NULL),
+(20, 12, 5, 'Contra-Ataque', 'AGI', 'Usando astúcia, audácia, flexibilidade, rapidez e oportunismo, alguns combatentes aproveitam-se habilmente das brechas criadas e/ou fornecidas por seus oponentes, sendo considerados mestres na arte de contra-atacar.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:|Obs3:', '', 'Esta técnica pode ser usada após outras manobras ou técnicas defensivas que tenham levado o oponente a um resultado Verde (Falha), Branco (Rotineiro) ou tenham reduzido totalmente o dano recebido.', NULL, NULL),
+(21, 10, 1, 'Dano Agravado', 'FOR', 'Com a experiência de inumeráveis batalhas, todo guerreiro acaba convertendo seu aprendizado em conhecimento. Alguns aprimoram essa experiência de modo a desferir golpes mais efetivos e mortais. Essa técnica é a síntese de toda essa sabedoria.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:Está técnica só pode ser usada se o total nela for igual ou maior que o estágio do personagem.|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termos em negrito no texto (1) nível a menos, respectivamente substituídos por (2) níveis a menos.', NULL, NULL),
+(22, 8, 2, 'Defletir Ataque', 'PER', 'Algumas vezes, quando uma pessoa passa muito tempo estudando um ser vivo, acaba por entender os padrões de movimento e de dobras de suas articulações. Com um treinamento mais severo, aliado a uma acuidade visual acima do senso comum, é possível controlar através da expressão corporal os movimentos instintivos de outros, por uma fração de segundo. Esse curto intervalo de tempo é o suficiente para desestabilizar o equilíbrio do alvo.', 'N/D', 'Obs1:Esta técnica só funciona corpo a corpo com alvo e não pode ser usada contra armas que tenham sido arremessadas, projéteis de besta ou arco.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica convertem um terço do total que se possuem nesta técnica será adicionado a sua FD.', NULL, NULL),
+(23, 9, 7, 'Desequilibrar', 'FOR', 'Esta técnica permite ao combatente aplicar um forte golpe em seu adversário desequilibrando-o.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica têm os termos em negrito no texto Triplo respectivamente substituído por', -1, 0),
+(24, 1, 6, 'Desviar', 'AGI', 'Esta técnica visa utilizar o golpe do adversário a seu favor, desviando a trajetória do ataque com sua própria arma.', 'N/D', 'Obs1:Ataque Cinza (Crítico) só pode ser defendido com um rolamento Cinza (Crítico).|Obs2:Caso o jogador perceba que será atacado e não esteja em um combate, este poderá usar esta técnica sem necessidade de anúncio.|Obs3:Esta técnica possui', 'N/D', 'Aprimorados em Desviar conseguem (1) nível a mais na rolagem desta técnica.', NULL, NULL),
+(25, 7, 7, 'Direcionamento', 'PER', 'Alguns combatentes são conhecidos pela sua capacidade de acertar um alvo mesmo nas condições mais adversas, e a técnica Direcionamento é o que lhes valeu esta fama. Chuva, ventos, tremores, distância ou mesmo alvos sob proteção não são empecilhos para aqueles que dominarem esta técnica, a qual consiste em prever e anular quaisquer efeitos que possam desviar a trajetória da flecha. Enquanto um combatente comum dispararia uma flecha em uma tempestade e o vento a jogaria para longe, um combatente treinado desvia um pouco a mira e usa o vento para atingir o alvo que queria.', 'N/D', 'Obs1:|Obs2:|Obs3:', '-.', 'Aprimorados nesta técnica anulam duas colunas de penalidade para cada ponto nesta técnica.', 6, 0),
+(26, 7, 2, 'Disparo Certeiro', 'PER', 'Com esta técnica, o arqueiro pode fazer com que o oponente fique imobilizado parcialmente, tropece ou mesmo pode causar um ferimento grave.', '-.', 'Obs1:|Obs2:|Obs3:', '', '', NULL, NULL),
 (27, 3, 2, 'Disparo Rápido', '-', 'Esta técnica permite efetuar rapidamente um disparo após outro disparo. Este novo disparo é muito menos efetivo por conta da pouca pressão da corda, entretanto, o disparo pode ser efetuado em outra direção.', '', 'Obs1:Está técnica possui Imperícia.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termos em negrito no texto (2) níveis a menos, respectivamente substituídos por (1) nível a menos.', NULL, NULL),
 (28, 3, 6, 'Escolta', 'PER', 'O guerreiro se posiciona de forma estratégica, próximo a até dois aliados com o objetivo de protegê-los.', 'N/D', 'Obs1:Sempre que o protegido do guerreiro for atacado por alguém, a defesa que será usada para o ataque é a defesa do protegido, acrescida do bônus conseguido pela rolagem.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica ganham (1) nível em seus resultados.', NULL, NULL),
-(29, 3, 6, 'Esquiva', 'AGI', 'O combatente se põe em uma posição extremamente defensiva visando se prevenir de todos os ataques inimigos.', 'N/D', 'Obs1:Esta técnica possui Ignorar a Iniciativa|Obs2:Esta técnica não pode ser usada em conjunto com mais de duas técnicas defensivas em uma mesma rodada.|Obs3:', 'N/D', 'Aprimorados nesta técnica recebem (1) nível a menos de dano e não recebem Ataques Oportunos enquanto estiverem em fuga.', 5, 0),
-(30, 3, 7, 'Estilhaçar', 'FOR', 'Esta técnica visa criar pequenas fissuras em armas e escudos com a finalidade de inutilizá-los.', '', 'Obs1:Equipamentos danificados por essa técnica usam a regra de conserto de equipamentos.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm uma fissura adicional em cada resultado do amarelo em diante. Com o aprimoramento também é possível danificar estruturas e armaduras naturais (criaturas), contudo, a possibilidade de destruir completamente e a quantidade de fissuras, nesses casos, fica a critério do Mestre.', NULL, NULL),
-(31, 3, 5, 'Expectativa', '-', 'Com esta técnica, o usuário assume uma posição de expectativa, com sua arma ou escudo empunhado(s), esperando o próximo passo do inimigo para retorquir de forma violenta. Para isso, o jogador deve anunciar ao Mestre que irá usar a técnica e contra qual oponente ele usará. Como o personagem fica na expectativa do ataque para poder então revidar, ele perde a iniciativa automaticamente e só poderá atacar após o seu oponente. Se, por algum motivo, o oponente não o ataque na rodada, o com batente então perde a ação de ataque na rodada.', '', 'Obs1:Está técnica possui Intermitência.|Obs2:Qualquer dano recebido diretamente na EF do combatente impede-o de efetuar esta técnica nessa rodada.|Obs3:', 'N/D', 'Aprimorados nesta técnica podem usar todo o bônus na técnica como coluna de ataque ao invés de metade.', NULL, NULL),
-(32, 3, 5, 'Explorar Fraqueza', 'PER', 'Através de uma breve análise sobre as ações recentes de um inimigo, especialmente a partir de seus gestos, comportamentos combativos e emoções notórias, o perspicaz combatente consegue obter uma vantagem momentânea em um confronto.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:As brechas observadas não dão direito ao uso da técnica Ataque Oportuno.|Obs3:', '', 'Aprimorados nesta técnica recebem a seguinte vantagem após ser bem-sucedido no uso desta técnica, se o combatente optar por atacar, o seu 1º ataque contra o alvo, após receber o bônus dessa técnica, acontece primeiro na próxima rodada (independente do resultado da iniciativa).', NULL, NULL),
-(33, 3, 2, 'Flechadas Múltiplas', '-', 'Esta técnica permite efetuar um disparo com duas flechas ao mesmo tempo.', 'N/D', 'Obs1:Está técnica possui Imperícia.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica podem optar entre usar um disparo com duas ou três flechas. No caso do uso de três flechas, cada projétil terá redução de (2) níveis.', NULL, NULL),
-(34, 3, 1, 'Força Interior', 'FIS', 'Esta técnica permite ao guerreiro utilizar o potencial máximo de sua Força temporariamente, mesmo nas piores condições (O guerreiro foi surpreendido A luta ocorreu em um momento inesperado, etc.). Exemplo: Magner possui Força 3 e está usando uma arma de 16 de dano. Seu dano normal seria 19/15/11/7 respectivamente para 100%/75%/50%/25%. Após usar a técnica, ele passa a ter 6 de força e dobra potência de sua força causando agora 28/24/20/16.O tempo máximo de uso (dentro ou fora de combate) por dia é de uma rodada para cada 1 ponto que possuir no total nesta técnica. Esses usos podem ser fracionados quantas vezes o guerreiro julgar necessário, respeitando o limite.O uso desta técnica geralmente resulta em grande desgaste, levando o usuário sentir-se fraco e com fortes dores nas articulações e músculos devido ao esforço. Toda vez que Força Interior for deixar de ser usada ou o tempo máximo se esgotar, o personagem deverá fazer um rolamento no total da técnica e verificar o resultado no quadro de rolagem a seguir. É importante ressaltar que os efeitos negativos desta técnica são cumulativos.Verde: O desgaste provoca 5 colunas de penalidade em qualquer atividade física por 24 horas.Branco: O desgaste provoca 5 colunas de penalidade em qualquer atividade física por 8 horasAmarelo: O desgaste provoca 4 colunas de penalidade em qualquer atividade física por 7 horas.Laranja: O desgaste provoca 3 colunas de penalidade em qualquer atividade física por 6 horas.Vermelho: O desgaste provoca 2 colunas de penalidade em qualquer atividade física por 5 horas.Azul: O desgaste provoca 1 colunas de penalidade em qualquer atividade física por 4 horas.Cinza: O guerreiro não é prejudicado pelo desgaste de utilizar Força Interior.Por exemplo: Magner possui Força 3 e é aprimorado em Força Interior, que possui em nível 7. Após utilizar o benefício por 2 rodadas, ele decide que optará por usar movimento especial da técnica. Como lhe restam 5 rodadas de uso, ele multiplica 5 x 3 = 15. Esse é o dano que deve ser somado ao ataque que ele realizará, que terá dano 100%/75%/50%/25% iguais a, respectivamente, 43/39/35/31.', 'N/D', 'Obs1:Está técnica possui Limite Diário|Obs2:|Obs3:', 'N/D', 'Os Aprimorados são capazes de direcionar toda a sua força interior para provocar dano. Assim, eles podem, em um único ataque, consumindo todas as rodadas que lhes restam e, com isso, soma-se ao dano final de qualquer ataque ao número de rodadas de uso que restam da técnica multiplicado pela Força do personagem. Este efeito só pode ser usado uma vez e, após isto, além de ter que fazer o rolamento para ver as consequências, a técnica não pode ser mais usada no dia.', -1, 0),
-(35, 3, 4, 'Fúria', 'PER', 'Esta técnica conferirá ao combatente a capacidade de mudar seu comportamento em combate, entrando em um estado de frenesi, ignorando qualquer tipo de emoção, tendo como único objetivo matar seus inimigos.', 'N/D', 'Obs1:|Obs2:|Obs3:', '', 'Aprimorados nesta técnica podem optar por usar a Fúria Bárbara. A Fúria Bárbara têm o dano e coluna da Fúria dobrados e além disso o guerreiro agora pode lutar até a -15. Entretanto, o teste para sair do estado de frenesi é Vermelho (Difícil) ao invés de Amarelo (Fácil).', -1, 0),
+(29, 1, 6, 'Esquiva', 'AGI', 'O combatente se põe em uma posição extremamente defensiva visando se prevenir de todos os ataques inimigos.', 'N/D', 'Obs1:Esta técnica possui Ignorar a Iniciativa|Obs2:Esta técnica não pode ser usada em conjunto com mais de duas técnicas defensivas em uma mesma rodada.|Obs3:', 'N/D', 'Aprimorados nesta técnica recebem (1) nível a menos de dano e não recebem Ataques Oportunos enquanto estiverem em fuga.', 5, 0),
+(30, 6, 7, 'Estilhaçar', 'FOR', 'Esta técnica visa criar pequenas fissuras em armas e escudos com a finalidade de inutilizá-los.', '', 'Obs1:Equipamentos danificados por essa técnica usam a regra de conserto de equipamentos.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm uma fissura adicional em cada resultado do amarelo em diante. Com o aprimoramento também é possível danificar estruturas e armaduras naturais (criaturas), contudo, a possibilidade de destruir completamente e a quantidade de fissuras, nesses casos, fica a critério do Mestre.', NULL, NULL),
+(31, 8, 5, 'Expectativa', '-', 'Com esta técnica, o usuário assume uma posição de expectativa, com sua arma ou escudo empunhado(s), esperando o próximo passo do inimigo para retorquir de forma violenta. Para isso, o jogador deve anunciar ao Mestre que irá usar a técnica e contra qual oponente ele usará. Como o personagem fica na expectativa do ataque para poder então revidar, ele perde a iniciativa automaticamente e só poderá atacar após o seu oponente. Se, por algum motivo, o oponente não o ataque na rodada, o com batente então perde a ação de ataque na rodada.', '', 'Obs1:Está técnica possui Intermitência.|Obs2:Qualquer dano recebido diretamente na EF do combatente impede-o de efetuar esta técnica nessa rodada.|Obs3:', 'N/D', 'Aprimorados nesta técnica podem usar todo o bônus na técnica como coluna de ataque ao invés de metade.', NULL, NULL),
+(32, 8, 5, 'Explorar Fraqueza', 'PER', 'Através de uma breve análise sobre as ações recentes de um inimigo, especialmente a partir de seus gestos, comportamentos combativos e emoções notórias, o perspicaz combatente consegue obter uma vantagem momentânea em um confronto.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:As brechas observadas não dão direito ao uso da técnica Ataque Oportuno.|Obs3:', '', 'Aprimorados nesta técnica recebem a seguinte vantagem após ser bem-sucedido no uso desta técnica, se o combatente optar por atacar, o seu 1º ataque contra o alvo, após receber o bônus dessa técnica, acontece primeiro na próxima rodada (independente do resultado da iniciativa).', NULL, NULL),
+(33, 7, 2, 'Flechadas Múltiplas', '-', 'Esta técnica permite efetuar um disparo com duas flechas ao mesmo tempo.', 'N/D', 'Obs1:Está técnica possui Imperícia.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica podem optar entre usar um disparo com duas ou três flechas. No caso do uso de três flechas, cada projétil terá redução de (2) níveis.', NULL, NULL),
+(34, 6, 1, 'Força Interior', 'FIS', 'Esta técnica permite ao guerreiro utilizar o potencial máximo de sua Força temporariamente, mesmo nas piores condições (O guerreiro foi surpreendido A luta ocorreu em um momento inesperado, etc.). Exemplo: Magner possui Força 3 e está usando uma arma de 16 de dano. Seu dano normal seria 19/15/11/7 respectivamente para 100%/75%/50%/25%. Após usar a técnica, ele passa a ter 6 de força e dobra potência de sua força causando agora 28/24/20/16.O tempo máximo de uso (dentro ou fora de combate) por dia é de uma rodada para cada 1 ponto que possuir no total nesta técnica. Esses usos podem ser fracionados quantas vezes o guerreiro julgar necessário, respeitando o limite.O uso desta técnica geralmente resulta em grande desgaste, levando o usuário sentir-se fraco e com fortes dores nas articulações e músculos devido ao esforço. Toda vez que Força Interior for deixar de ser usada ou o tempo máximo se esgotar, o personagem deverá fazer um rolamento no total da técnica e verificar o resultado no quadro de rolagem a seguir. É importante ressaltar que os efeitos negativos desta técnica são cumulativos.Verde: O desgaste provoca 5 colunas de penalidade em qualquer atividade física por 24 horas.Branco: O desgaste provoca 5 colunas de penalidade em qualquer atividade física por 8 horasAmarelo: O desgaste provoca 4 colunas de penalidade em qualquer atividade física por 7 horas.Laranja: O desgaste provoca 3 colunas de penalidade em qualquer atividade física por 6 horas.Vermelho: O desgaste provoca 2 colunas de penalidade em qualquer atividade física por 5 horas.Azul: O desgaste provoca 1 colunas de penalidade em qualquer atividade física por 4 horas.Cinza: O guerreiro não é prejudicado pelo desgaste de utilizar Força Interior.Por exemplo: Magner possui Força 3 e é aprimorado em Força Interior, que possui em nível 7. Após utilizar o benefício por 2 rodadas, ele decide que optará por usar movimento especial da técnica. Como lhe restam 5 rodadas de uso, ele multiplica 5 x 3 = 15. Esse é o dano que deve ser somado ao ataque que ele realizará, que terá dano 100%/75%/50%/25% iguais a, respectivamente, 43/39/35/31.', 'N/D', 'Obs1:Está técnica possui Limite Diário|Obs2:|Obs3:', 'N/D', 'Os Aprimorados são capazes de direcionar toda a sua força interior para provocar dano. Assim, eles podem, em um único ataque, consumindo todas as rodadas que lhes restam e, com isso, soma-se ao dano final de qualquer ataque ao número de rodadas de uso que restam da técnica multiplicado pela Força do personagem. Este efeito só pode ser usado uma vez e, após isto, além de ter que fazer o rolamento para ver as consequências, a técnica não pode ser mais usada no dia.', -1, 0),
+(35, 9, 4, 'Fúria', 'PER', 'Esta técnica conferirá ao combatente a capacidade de mudar seu comportamento em combate, entrando em um estado de frenesi, ignorando qualquer tipo de emoção, tendo como único objetivo matar seus inimigos.', 'N/D', 'Obs1:|Obs2:|Obs3:', '', 'Aprimorados nesta técnica podem optar por usar a Fúria Bárbara. A Fúria Bárbara têm o dano e coluna da Fúria dobrados e além disso o guerreiro agora pode lutar até a -15. Entretanto, o teste para sair do estado de frenesi é Vermelho (Difícil) ao invés de Amarelo (Fácil).', -1, 0),
 (36, 3, 2, 'Golpe Duplo', '-', 'O golpe duplo é uma técnica de combate que tem enfoque no manuseio das armas com as duas mãos, a fim reunir a força necessária para executar dois golpes. Para se ter êxito no uso dessa técnica, aproveita-se a velocidade gerada no balanço do primeiro movimento ofensivo para usá-la em um segundo ataque com maior efetividade.', 'N/D', 'Obs1:Está técnica possui Imperícia.|Obs2:Não é possível usar esta técnica com armas do grupo leve ou duas armas ao mesmo tempo.|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem encontrar sinergicamente o ponto exato de equilíbrio das armas', NULL, NULL),
-(37, 3, 2, 'Golpe Giratório', 'AGI', 'Esta técnica permite ao usuário efetuar um único ataque e acertar múltiplos alvos que estejam em um combate corpo a corpo consigo.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem atingir todos que desejarem, dentro de seu alcance, ao invés de apenas 3 vítimas.', 5, 0),
-(38, 3, 1, 'Golpe Letal', 'FOR', 'O usuário desta técnica consegue potencializar sua Força aplicando um golpe devastador. As posições especiais para o uso desta técnica são sua maior característica e variam de arma para arma machados são posicionados acima da cabeça, espadas muito grandes como montantes costumam ser usadas em um golpe diagonal que vem de trás do ombro de apoio, espadas mais leves são retiradas diretamente da bainha, aproveitando a velocidade conseguida com o deslizamento.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:Esta técnica só pode ser usada estando corpo a corpo e usando armas de combate corpo a corpo.|Obs3:', 'N/D', 'Aprimorados nesta técnica podem somar todo o dano ao invés da metade.', -1, 0),
+(37, 6, 2, 'Golpe Giratório', 'AGI', 'Esta técnica permite ao usuário efetuar um único ataque e acertar múltiplos alvos que estejam em um combate corpo a corpo consigo.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem atingir todos que desejarem, dentro de seu alcance, ao invés de apenas 3 vítimas.', 5, 0),
+(38, 6, 1, 'Golpe Letal', 'FOR', 'O usuário desta técnica consegue potencializar sua Força aplicando um golpe devastador. As posições especiais para o uso desta técnica são sua maior característica e variam de arma para arma machados são posicionados acima da cabeça, espadas muito grandes como montantes costumam ser usadas em um golpe diagonal que vem de trás do ombro de apoio, espadas mais leves são retiradas diretamente da bainha, aproveitando a velocidade conseguida com o deslizamento.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:Esta técnica só pode ser usada estando corpo a corpo e usando armas de combate corpo a corpo.|Obs3:', 'N/D', 'Aprimorados nesta técnica podem somar todo o dano ao invés da metade.', -1, 0),
 (39, 3, 7, 'Heroísmo', 'FIS', 'Uma das técnicas muito usadas pelos mais heroicos combatentes da antiguidade, que consiste em utilizar o máximo de sua capacidade física, unida a força de vontade, a fim de recuperar o ânimo perdido em batalha. Entretanto, forçar seu corpo ao limite pode trazer uma grande exaustão pós-combate.', 'N/D', 'Obs1:|Obs2:|Obs3:', '', 'Aprimorados nesta técnica recebem um bônus cumulativo de +5% nos resultados funcionais (de cor Amarela, Laranja, Vermelho, Azul e Cinza) a cada nível ímpar que adquirirem nesta técnica. O acréscimo de bônus cessará quando o resultado Cinza chegar ao valor de 100%.', NULL, NULL),
-(40, 3, 4, 'Imprevisibilidade', 'PER', 'Movimentos inconstantes e, ao mesmo tempo, efetivos dão ao combatente uma vantagem contra seus inimigos, tornando incerta a leitura de seus movimentos pelo adversário, tanto em combate, quanto se evadindo.', 'N/D', 'Obs1:Esta técnica não acumula bônus com ela mesma.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica reduzem a efetividade dos ataques adversários em (1) nível enquanto ela estiver ativa.', NULL, NULL),
-(41, 3, 6, 'Inibir Ataque', 'PER', 'Uma das técnicas mais estratégicas voltadas a inibição dos ataques dos inimigos, através da mensuração de distância correta, golpes certeiros e movimentação primorosa, impossibilitando parcialmente uma reação ofensiva de seus adversários.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:Está técnica só pode ser usada se o total nela for igual ao estágio do personagem.|Obs3:', 'N/D', 'Aprimorados nesta técnica agora só podem ser acertados se o golpe do oponente for de mesma porcentagem ou de porcentagem superior.', NULL, NULL),
-(42, 3, 7, 'Intimidar', 'CAR', 'A determinação, segurança e força de vontade de alguns ferozes combatentes são tão poderosas que podem, por si só, servir como arma contra seus inimigos. Uma presença intimidadora é a manifestação máxima do temor que um combatente com vontade de ferro causa apenas com o olhar, muitas vezes, pode definir uma luta antes mesmo desta começar.', 'N/D', 'Obs1:A iniciativa dos envolvidos deverá ser rolada individualmente.|Obs2:Alvos sem mente ou imunes a covardia e/ou a medo não sofrem os efeitos desta técnica.|Obs3:Se o alvo desta técnica resistir ao teste, este ficará imune a um novo uso desta técnica até que o usuário o derrote em um combate.', 'N/D', 'Aprimorados nesta técnica têm o efeito da técnica dobrado e ganham automaticamente a iniciativa contra seus adversário intimidados.', 2, 0),
+(40, 1, 4, 'Imprevisibilidade', '-', 'Movimentos inconstantes e, ao mesmo tempo, efetivos dão ao combatente uma vantagem contra seus inimigos, tornando incerta a leitura de seus movimentos pelo adversário, tanto em combate, quanto se evadindo.', 'N/D', 'Obs1:Esta técnica não acumula bônus com ela mesma.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica reduzem a efetividade dos ataques adversários em (1) nível enquanto ela estiver ativa.', NULL, NULL),
+(41, 6, 6, 'Inibir Ataque', 'PER', 'Uma das técnicas mais estratégicas voltadas a inibição dos ataques dos inimigos, através da mensuração de distância correta, golpes certeiros e movimentação primorosa, impossibilitando parcialmente uma reação ofensiva de seus adversários.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:Está técnica só pode ser usada se o total nela for igual ao estágio do personagem.|Obs3:', 'N/D', 'Aprimorados nesta técnica agora só podem ser acertados se o golpe do oponente for de mesma porcentagem ou de porcentagem superior.', NULL, NULL),
+(42, 9, 7, 'Intimidar', 'CAR', 'A determinação, segurança e força de vontade de alguns ferozes combatentes são tão poderosas que podem, por si só, servir como arma contra seus inimigos. Uma presença intimidadora é a manifestação máxima do temor que um combatente com vontade de ferro causa apenas com o olhar, muitas vezes, pode definir uma luta antes mesmo desta começar.', 'N/D', 'Obs1:A iniciativa dos envolvidos deverá ser rolada individualmente.|Obs2:Alvos sem mente ou imunes a covardia e/ou a medo não sofrem os efeitos desta técnica.|Obs3:Se o alvo desta técnica resistir ao teste, este ficará imune a um novo uso desta técnica até que o usuário o derrote em um combate.', 'N/D', 'Aprimorados nesta técnica têm o efeito da técnica dobrado e ganham automaticamente a iniciativa contra seus adversário intimidados.', 2, 0),
 (43, 3, 7, 'Leitura da Batalha', 'PER', 'Um guerreiro extremamente treinado consegue adaptar-se a um estilo de luta, mantendo a cadência do combate ao seu favor. A técnica Leitura da Batalha permite ao guerreiro tirar vantagens em cima de seus inimigos, podendo até antever alguns relances da batalha.', 'N/D', 'Obs1:Esta técnica não impede o adversário de usar suas técnicas em outros alvos.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica adicionam um quinto do total desta técnica como bônus nela mesma.', NULL, NULL),
-(44, 3, 7, 'Luta às Cegas', 'PER', 'Com esta técnica, o personagem aguça seus outros sentidos (Audição, Olfato e Tato), permitindo lutar na escuridão ou contra inimigos que não podem ser vistos, podendo até anular as penalidades.', 'N/D', 'Obs1:O fato de saber lutar no escuro não faz com que o usuário possa ver no escuro, o que implica que essa Técnica não dá qualquer bônus em Habilidades ou outros testes que precisem da visão.|Obs2:Esta técnica foi desenvolvida para lutas corpo a corpo e não diminui penalidades para ataques ou magias que estejam fora de um combate corpo a corpo.|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem combater à distância devido a sua alta percepção sensorial, podendo atacar qualquer alvo que esteja a no máximo 15 metros, contudo, ainda recebem redutores causados pela escuridão e têm 1 nível de dificuldade a menos para qualquer habilidade ou teste de atributo que ajude a encontrar seus adversário sem usar a visão.', -1, 0),
-(45, 3, 5, 'Mira', 'PER', 'Antigos mestres em arquearia treinaram a capacidade de antecipar movimentos, visando disparos de alta precisão, sempre focando os pontos vitais de suas vítimas. Para isso, analisam o padrão de movimentação dos alvos.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:Caso o combatente decida mudar de alvo, este deverá fazer todo o processo descrito na técnica novamente.|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem usá-la em quantos alvos tiverem atacado na rodada passada.', -1, 0),
-(46, 3, 4, 'Posicionamento', 'PER', 'Esta técnica permite ao usuário defender-se de mais de um adversário por meio de (passos de ajuste, desvios, fintas etc.), em uma espécie elegante de dança, envolvendo sua postura, equilíbrio e perceptividade conseguindo, assim, pouco a pouco, mudar seu posicionamento, levando seus inimigos a posições desfavoráveis para acertá-los, protegendo-se de múltiplos atacantes.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm 1 nível a mais em seus rolamentos nesta técnica.', NULL, NULL),
-(47, 3, 4, 'Postura Defensiva', 'PER', 'Através de movimentos extremamente calculados e uma excelente percepção combativa, é possível amenizar os danos causados pelo combate.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica recebem um bônus de (1) nível em rolagem de qualquer outra técnica defensiva enquanto esta técnica estiver ativa.', NULL, NULL),
-(48, 3, 4, 'Postura Ofensiva', 'AGI', 'A imprudência aliada a um ímpeto devastador são marcas fortes destes destemidos combatentes, em contrapartida, brechas em sua postura podem ser exploradas por seu inimigo.', '', 'Obs1:Esta técnica só funciona em um combate corpo a corpo.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm (1) nível a mais nos rolamentos desta técnica.', NULL, NULL),
-(49, 3, 5, 'Pressionar o Oponente', 'FOR', 'O guerreiro usa sua movimentação em combate aliada ao uso de armas pesadas e/ou escudo para forçar oponente a recuar criando uma desvantagem para o oponente.', '-.', 'Obs1:|Obs2:|Obs3:', '', 'Aprimorados nesta técnica podem usá-la sem que o oponente tenha algo que esteja dificultando sua movimentação e sem a necessidade de fazer formação com um aliado.', NULL, NULL),
-(50, 3, 7, 'Provocar', 'CAR', 'Provocar é a técnica de campo de batalha empregada especialmente por combatentes fanfarrões, ousados e/ou perspicazes. Ela é utilizada de forma estratégica para atrair a atenção ao atingir em cheio com palavras, gestos e/ou movimentos o(s) ego(s) e/ou(s) instinto(s) do(s) adversário(s). Com isso, as vítimas da provocação perdem momentaneamente a concentração em outros alvos, não sendo capazes de se concentrar em nenhum outro inimigo além do provocador e sentem-se compelidas a atacá-lo até o fim da rodada.', 'N/D', 'Obs1:|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm (1) nível a mais em suas rolagens nesta técnica.', NULL, NULL),
+(44, 1, 7, 'Luta às Cegas', 'PER', 'Com esta técnica, o personagem aguça seus outros sentidos (Audição, Olfato e Tato), permitindo lutar na escuridão ou contra inimigos que não podem ser vistos, podendo até anular as penalidades.', 'N/D', 'Obs1:O fato de saber lutar no escuro não faz com que o usuário possa ver no escuro, o que implica que essa Técnica não dá qualquer bônus em Habilidades ou outros testes que precisem da visão.|Obs2:Esta técnica foi desenvolvida para lutas corpo a corpo e não diminui penalidades para ataques ou magias que estejam fora de um combate corpo a corpo.|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem combater à distância devido a sua alta percepção sensorial, podendo atacar qualquer alvo que esteja a no máximo 15 metros, contudo, ainda recebem redutores causados pela escuridão e têm 1 nível de dificuldade a menos para qualquer habilidade ou teste de atributo que ajude a encontrar seus adversário sem usar a visão.', -1, 0),
+(45, 7, 5, 'Mira', 'PER', 'Antigos mestres em arquearia treinaram a capacidade de antecipar movimentos, visando disparos de alta precisão, sempre focando os pontos vitais de suas vítimas. Para isso, analisam o padrão de movimentação dos alvos.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:Caso o combatente decida mudar de alvo, este deverá fazer todo o processo descrito na técnica novamente.|Obs3:', 'N/D', 'Aprimorados nesta técnica conseguem usá-la em quantos alvos tiverem atacado na rodada passada.', -1, 0),
+(46, 11, 4, 'Posicionamento', 'PER', 'Esta técnica permite ao usuário defender-se de mais de um adversário por meio de (passos de ajuste, desvios, fintas etc.), em uma espécie elegante de dança, envolvendo sua postura, equilíbrio e perceptividade conseguindo, assim, pouco a pouco, mudar seu posicionamento, levando seus inimigos a posições desfavoráveis para acertá-los, protegendo-se de múltiplos atacantes.', 'N/D', 'Obs1:Esta técnica possui Intermitência.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm 1 nível a mais em seus rolamentos nesta técnica.', NULL, NULL),
+(47, 11, 4, 'Postura Defensiva', 'PER', 'Através de movimentos extremamente calculados e uma excelente percepção combativa, é possível amenizar os danos causados pelo combate.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica recebem um bônus de (1) nível em rolagem de qualquer outra técnica defensiva enquanto esta técnica estiver ativa.', NULL, NULL),
+(48, 12, 4, 'Postura Ofensiva', 'AGI', 'A imprudência aliada a um ímpeto devastador são marcas fortes destes destemidos combatentes, em contrapartida, brechas em sua postura podem ser exploradas por seu inimigo.', '', 'Obs1:Esta técnica só funciona em um combate corpo a corpo.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm (1) nível a mais nos rolamentos desta técnica.', NULL, NULL),
+(49, 6, 5, 'Pressionar o Oponente', 'FOR', 'O guerreiro usa sua movimentação em combate aliada ao uso de armas pesadas e/ou escudo para forçar oponente a recuar criando uma desvantagem para o oponente.', '-.', 'Obs1:|Obs2:|Obs3:', '', 'Aprimorados nesta técnica podem usá-la sem que o oponente tenha algo que esteja dificultando sua movimentação e sem a necessidade de fazer formação com um aliado.', NULL, NULL),
+(50, 1, 7, 'Provocar', 'CAR', 'Provocar é a técnica de campo de batalha empregada especialmente por combatentes fanfarrões, ousados e/ou perspicazes. Ela é utilizada de forma estratégica para atrair a atenção ao atingir em cheio com palavras, gestos e/ou movimentos o(s) ego(s) e/ou(s) instinto(s) do(s) adversário(s). Com isso, as vítimas da provocação perdem momentaneamente a concentração em outros alvos, não sendo capazes de se concentrar em nenhum outro inimigo além do provocador e sentem-se compelidas a atacá-lo até o fim da rodada.', 'N/D', 'Obs1:|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm (1) nível a mais em suas rolagens nesta técnica.', NULL, NULL),
 (51, 3, 2, 'Pugilato', 'AGI', 'Através desta técnica é possível utilizar o grupo Combate Desarmado de forma mais eficiente contra qualquer tipo de adversário.', 'N/D', 'Obs1:Os ataques devem ser realizados com grupo Combate Desarmado.|Obs2:|Obs3:', '', 'Aprimorados nesta técnica têm 1 nível a mais em seus resultados nos rolamentos desta técnica e o Azul pode virar Cinza. Resultado Falha (Verde) não é afetado.', NULL, NULL),
 (52, 3, 3, 'Remover Debilitações', 'FIS', 'O guerreiro consegue anular gradativamente as debilitações impostas a sua mobilidade e também geradas por seus equipamentos defensivos ao usar habilidades.', '-.', 'Obs1:|Obs2:|Obs3:', '', '', NULL, NULL),
-(53, 3, 6, 'Resguardar', 'AGI', 'Protege os aliados e permite que eles tenham segurança em seus movimentos para alcançar posições desejáveis ou taticamente favoráveis. É uma boa estratégia para alcançar a vitória final em uma batalha. Resguardar cumpre essa tarefa com disparos ou arremessos precisos em momentos cruciais, criando uma ameaça vital aos atacantes de seus protegidos.', 'Atirar em Movimento e Flechadas Múltiplas.', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem o termo Quatro respectivamente por Três.', NULL, NULL),
-(54, 3, 3, 'Resistência à Dor', 'FIS', 'Alguns combatentes acreditam que o ápice da força é não se deixar derrubar e que cada um é seu pior inimigo. Com o mais árduo treinamento em resistência e concentração alguns lutadores desenvolveram a capacidade de resistir a todo tipo de dor, mantendo o corpo completamente subjugado pela mente.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica não sofrem penalidades que seriam causadas pela dor, não precisam fazer testes para resistir a dor e tem um quinto do total nesta técnica convertido como resistência física extra para o personagem.', 4, 0),
+(53, 7, 6, 'Resguardar', 'AGI', 'Protege os aliados e permite que eles tenham segurança em seus movimentos para alcançar posições desejáveis ou taticamente favoráveis. É uma boa estratégia para alcançar a vitória final em uma batalha. Resguardar cumpre essa tarefa com disparos ou arremessos precisos em momentos cruciais, criando uma ameaça vital aos atacantes de seus protegidos.', 'Atirar em Movimento e Flechadas Múltiplas.', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem o termo Quatro respectivamente por Três.', NULL, NULL),
+(54, 1, 3, 'Resistência à Dor', 'FIS', 'Alguns combatentes acreditam que o ápice da força é não se deixar derrubar e que cada um é seu pior inimigo. Com o mais árduo treinamento em resistência e concentração alguns lutadores desenvolveram a capacidade de resistir a todo tipo de dor, mantendo o corpo completamente subjugado pela mente.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica não sofrem penalidades que seriam causadas pela dor, não precisam fazer testes para resistir a dor e tem um quinto do total nesta técnica convertido como resistência física extra para o personagem.', 4, 0),
 (55, 3, 3, 'Resistência Extrema', 'AUR', 'Durante o segundo ciclo, os reis-feiticeiros governaram como semidivindades. Com seus poderosíssimos encantos, moldavam a seu bel-prazer o mundo ao seu redor. No entanto, seus domínios não eram pacíficos, pois sempre houveram bravos rebeldes a enfrentá-los. Durante esse período, os mestres da arte da guerra desenvolveram e aperfeiçoaram uma forma de melhorar suas chances contra as vontades mesquinhas dos grandes místicos. Usando métodos de meditação, foram capazes de doutrinar seus corpos, suas mentes e seus espíritos para não sucumbir aos encantos, contudo até mesmo esta técnica tinha um grande revés, a perda irreversível temporariamente de parte da sua vitalidade.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem um quinto de seu total convertido como resistência à magia extra para o personagem.', NULL, NULL),
-(56, 3, 2, 'Retalhar', '-', 'O guerreiro efetua dois ferozes golpes de forma simultânea a fim de utilizar todo o seu potencial de seus golpes e minimizando a efetividade de algumas formas de defesa.', 'Ambidestria e Fúria.', 'Obs1:Esta técnica possui Imperícia e Intermitência.|Obs2:Esta técnica não pode ser usada com armas do Grupo Pesado.|Obs3:', 'N/D', 'Aprimorados nesta técnica podem optar por fazer um único ataque com colunas de ataque extras iguais ao total que se possuir nesta técnica ao invés de reduzir as colunas.', NULL, NULL),
-(57, 3, 2, 'Ricochetear', 'PER', 'Para alguns, um disparo retilíneo ou parabólico é a única solução. Para outros, ângulos de deflexão são a melhor saída. A técnica ricochete reúne todas as experiências de um mestre em arquearia com uma pontaria e o controle de trajetória lendários. Com essa técnica, o usuário pode fazer disparos que acertam locais antes impossíveis, utilizando somente sua percepção espacial, arco e flecha.', 'N/D', 'Obs1:Esta técnica possui Imperícia.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termo 2 níveis substituído por 1 nível.', NULL, NULL),
-(58, 3, 1, 'Sangramento', '-', 'Com uma expertise inigualável no combate, certos guerreiros desenvolveram formas de causar parte do dano de seus ataques nos pontos vitais de seus adversários. A técnica sangramento é o resultado desse esforço para aperfeiçoar esses ensinamentos. A técnica tem esse nome pela característica peculiar de causar o rompimento interno de alguns vasos sanguíneos mais expostos do alvo, causando leves sangramentos pelos olhos e ouvidos, assim como em determinadas partes dos membros superiores e inferiores. Embora o dano não seja notável no começo, com o tempo os efeitos podem ser devastadores para o alvo.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:No caso de uso cumulativo, o dano extra não é somado e mantém-se apenas a maior duração.|Obs3:', '', 'Aprimorados nesta técnica tem o termo 1 de dano respectivamente substituído por 2 de dano.', NULL, NULL),
+(56, 9, 2, 'Retalhar', '-', 'O guerreiro efetua dois ferozes golpes de forma simultânea a fim de utilizar todo o seu potencial de seus golpes e minimizando a efetividade de algumas formas de defesa.', 'Ambidestria e Fúria.', 'Obs1:Esta técnica possui Imperícia e Intermitência.|Obs2:Esta técnica não pode ser usada com armas do Grupo Pesado.|Obs3:', 'N/D', 'Aprimorados nesta técnica podem optar por fazer um único ataque com colunas de ataque extras iguais ao total que se possuir nesta técnica ao invés de reduzir as colunas.', NULL, NULL),
+(57, 7, 2, 'Ricochetear', 'PER', 'Para alguns, um disparo retilíneo ou parabólico é a única solução. Para outros, ângulos de deflexão são a melhor saída. A técnica ricochete reúne todas as experiências de um mestre em arquearia com uma pontaria e o controle de trajetória lendários. Com essa técnica, o usuário pode fazer disparos que acertam locais antes impossíveis, utilizando somente sua percepção espacial, arco e flecha.', 'N/D', 'Obs1:Esta técnica possui Imperícia.|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica tem os termo 2 níveis substituído por 1 nível.', NULL, NULL),
+(58, 9, 1, 'Sangramento', '-', 'Com uma expertise inigualável no combate, certos guerreiros desenvolveram formas de causar parte do dano de seus ataques nos pontos vitais de seus adversários. A técnica sangramento é o resultado desse esforço para aperfeiçoar esses ensinamentos. A técnica tem esse nome pela característica peculiar de causar o rompimento interno de alguns vasos sanguíneos mais expostos do alvo, causando leves sangramentos pelos olhos e ouvidos, assim como em determinadas partes dos membros superiores e inferiores. Embora o dano não seja notável no começo, com o tempo os efeitos podem ser devastadores para o alvo.', 'N/D', 'Obs1:Está técnica possui Intermitência.|Obs2:No caso de uso cumulativo, o dano extra não é somado e mantém-se apenas a maior duração.|Obs3:', '', 'Aprimorados nesta técnica tem o termo 1 de dano respectivamente substituído por 2 de dano.', NULL, NULL),
 (59, 3, 7, 'Segundo Fôlego', 'FIS', 'O combatente é capaz de recuperar um pouco de sua EH perdida na rodada passada ao aproveitar-se da cadência da batalha para reavivar um pouco do seu fôlego.', 'N/D', 'Obs1:Esta técnica possui Intermitência|Obs2:Esta técnica não pode ser usada enquanto o usuário estiver com danos em sua EF, com sua EH em zero ou fora de combate.|Obs3:Esta técnica não pode extrapolar a EH total do personagem e nem a EH que este possuía na rodada em que fez uso dela.', '', 'Aprimorados nesta técnica podem ignorar a primeira rolagem de qualquer teste relativo a atividades físicas ou resistência física que tenham o cansaço como base e adicionam mais 1 minuto ao tempo de uma corrida curta e 3 minutos no tempo de uma corrida de fundo.', NULL, NULL),
 (60, 3, 3, 'Voz de Comando', 'PER', 'Alguns combatentes são capazes de antever os passos iniciais de um combate, desenvolvendo uma rápida, porém eficiente, estratégia de batalha. Quando tais combatentes são reconhecidos como líderes de um grupo, suas instruções possibilitam que todos se posicionem estrategicamente, ganhando vantagem no combate por vir.', 'N/D', 'Obs1:|Obs2:|Obs3:', 'N/D', 'Aprimorados nesta técnica podem distribuir 3 pontos extras de iniciativa da maneira que acharem melhor entre os beneficiados.', 6, 0);
 
@@ -798,24 +833,32 @@ INSERT INTO `combate` (`id`, `id_combate_grupo`, `id_categoria`, `nome`, `atribu
 CREATE TABLE `combate_grupo` (
   `id` int NOT NULL,
   `id_pai` int DEFAULT NULL,
-  `nome` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+  `nome` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `basica` int DEFAULT '0',
+  `profissao` int DEFAULT '0',
+  `especializacao` int DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `combate_grupo`
+--
+
+TRUNCATE TABLE `combate_grupo`;
 --
 -- Despejando dados para a tabela `combate_grupo`
 --
 
-INSERT INTO `combate_grupo` (`id`, `id_pai`, `nome`) VALUES
-(1, 1, 'Técnicas de Combate (Básicas)'),
-(4, 2, 'Guerreiros'),
-(5, 3, 'Ladinos'),
-(6, 2, 'Guerreiros - Academia de Infantaria'),
-(7, 2, 'Guerreiros - Academia dos Arqueiros'),
-(8, 2, 'Guerreiros - Academia dos Cavaleiros'),
-(9, 2, 'Guerreiros - Academia dos Gladiadores'),
-(10, 3, 'Ladinos - Guilda dos Assassinos'),
-(11, 3, 'Ladinos - Guilda dos Ladrões'),
-(12, 3, 'Ladinos - Guilda dos Piratas');
+INSERT INTO `combate_grupo` (`id`, `id_pai`, `nome`, `basica`, `profissao`, `especializacao`) VALUES
+(1, -1, 'Técnicas de Combate (Básicas)', 1, 0, 0),
+(4, 1, 'Guerreiro', 0, 1, 0),
+(5, 2, 'Ladino', 0, 1, 0),
+(6, 1, 'Academia de Infantaria', 0, 0, 1),
+(7, 2, 'Academia dos Arqueiros', 0, 0, 1),
+(8, 3, 'Academia dos Cavaleiros', 0, 0, 1),
+(9, 4, 'Academia dos Gladiadores', 0, 0, 1),
+(10, 6, 'Guilda dos Assassinos', 0, 0, 1),
+(11, 5, 'Guilda dos Ladrões', 0, 0, 1),
+(12, 7, 'Guilda dos Piratas', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -831,11 +874,17 @@ CREATE TABLE `combate_grupo_custo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `combate_grupo_custo`
+--
+
+TRUNCATE TABLE `combate_grupo_custo`;
+--
 -- Despejando dados para a tabela `combate_grupo_custo`
 --
 
 INSERT INTO `combate_grupo_custo` (`id_combate`, `id_combate_grupo`, `custo`, `reducao`) VALUES
 (1, 7, 2, 0),
+(2, 1, 2, 1),
 (2, 4, 2, 1),
 (2, 5, 2, 1),
 (3, 8, 1, 0),
@@ -843,7 +892,6 @@ INSERT INTO `combate_grupo_custo` (`id_combate`, `id_combate_grupo`, `custo`, `r
 (4, 4, 2, 1),
 (4, 5, 2, 0),
 (5, 4, 2, 1),
-(5, 5, 2, 0),
 (6, 1, 1, 0),
 (6, 4, 1, 0),
 (6, 5, 1, 0),
@@ -857,6 +905,8 @@ INSERT INTO `combate_grupo_custo` (`id_combate`, `id_combate_grupo`, `custo`, `r
 (11, 4, 1, 0),
 (12, 8, 2, 0),
 (13, 8, 2, 0),
+(14, 1, 2, 0),
+(14, 5, 2, 0),
 (14, 7, 1, 0),
 (15, 4, 2, 1),
 (16, 1, 2, 0),
@@ -869,16 +919,19 @@ INSERT INTO `combate_grupo_custo` (`id_combate`, `id_combate_grupo`, `custo`, `r
 (18, 4, 1, 0),
 (18, 5, 1, 0),
 (19, 4, 1, 0),
+(19, 5, 2, 0),
 (20, 4, 2, 1),
 (20, 12, 1, 0),
 (21, 4, 2, 1),
 (21, 10, 2, 0),
+(22, 5, 2, 0),
 (22, 8, 2, 0),
 (23, 9, 1, 0),
 (24, 1, 2, 0),
 (24, 4, 2, 1),
 (24, 5, 2, 0),
 (25, 7, 1, 0),
+(26, 5, 2, 0),
 (26, 7, 1, 0),
 (27, 4, 2, 1),
 (27, 5, 2, 1),
@@ -888,6 +941,7 @@ INSERT INTO `combate_grupo_custo` (`id_combate`, `id_combate_grupo`, `custo`, `r
 (29, 5, 1, 0),
 (30, 6, 2, 0),
 (31, 8, 2, 0),
+(32, 5, 2, 0),
 (32, 8, 1, 0),
 (33, 7, 2, 0),
 (34, 6, 1, 0),
@@ -895,12 +949,14 @@ INSERT INTO `combate_grupo_custo` (`id_combate`, `id_combate_grupo`, `custo`, `r
 (36, 4, 2, 1),
 (36, 5, 2, 1),
 (37, 6, 2, 0),
+(38, 5, 2, 0),
 (38, 6, 2, 0),
 (39, 4, 2, 1),
 (40, 1, 2, 0),
 (40, 4, 2, 1),
 (40, 5, 2, 1),
 (41, 6, 2, 0),
+(42, 5, 2, 0),
 (42, 9, 1, 0),
 (43, 4, 2, 1),
 (44, 1, 1, 0),
@@ -918,6 +974,7 @@ INSERT INTO `combate_grupo_custo` (`id_combate`, `id_combate_grupo`, `custo`, `r
 (50, 4, 2, 0),
 (50, 5, 2, 0),
 (51, 4, 1, 0),
+(51, 5, 2, 0),
 (52, 4, 1, 0),
 (52, 5, 1, 0),
 (53, 7, 2, 0),
@@ -944,6 +1001,11 @@ CREATE TABLE `divindade` (
   `dominio` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `divindade`
+--
+
+TRUNCATE TABLE `divindade`;
 --
 -- Despejando dados para a tabela `divindade`
 --
@@ -987,6 +1049,11 @@ CREATE TABLE `equipamento` (
   `capacete` int DEFAULT (0)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `equipamento`
+--
+
+TRUNCATE TABLE `equipamento`;
 --
 -- Despejando dados para a tabela `equipamento`
 --
@@ -1300,7 +1367,8 @@ INSERT INTO `equipamento` (`id`, `id_grupo`, `nome`, `descricao`, `image_file`, 
 (317, 12, 'Turmalina Bicolor, Safira, Esmeralda Muito Dificil', NULL, NULL, 2000, 0, 0, 0, 0, 0),
 (318, 12, 'Rubi e Diamante Absurdo', NULL, NULL, 5000, 0, 0, 0, 0, 0),
 (319, 12, 'Diamante Vermelho Impossível', NULL, NULL, 50000, 0, 0, 0, 0, 0),
-(320, 5, 'Água abençoada (250 ml)', 'Causa 1 de dano na EF ou 4 na EH, reduz em 1 a RM \"não acumula\". Funciona contra demônios e mortos vivos. Somente Sacerdotes com a magia Sagração de Itens 1, podem abençoar até 1 Litro/Karma', NULL, 5, 0, 0, 0, 0, 0);
+(320, 5, 'Água abençoada (250 ml)', 'Causa 1 de dano na EF ou 4 na EH, reduz em 1 a RM \"não acumula\". Funciona contra demônios e mortos vivos. Somente Sacerdotes com a magia Sagração de Itens 1, podem abençoar até 1 Litro/Karma', NULL, 5, 0, 0, 0, 0, 0),
+(321, 10, 'Calçado Comum', NULL, NULL, 4, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1330,6 +1398,11 @@ CREATE TABLE `equipamento_armas` (
   `Hu` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `equipamento_armas`
+--
+
+TRUNCATE TABLE `equipamento_armas`;
 --
 -- Despejando dados para a tabela `equipamento_armas`
 --
@@ -1406,6 +1479,11 @@ CREATE TABLE `equipamento_defesa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `equipamento_defesa`
+--
+
+TRUNCATE TABLE `equipamento_defesa`;
+--
 -- Despejando dados para a tabela `equipamento_defesa`
 --
 
@@ -1434,6 +1512,11 @@ CREATE TABLE `equipamento_grupos` (
   `nome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `equipamento_grupos`
+--
+
+TRUNCATE TABLE `equipamento_grupos`;
 --
 -- Despejando dados para a tabela `equipamento_grupos`
 --
@@ -1467,6 +1550,11 @@ CREATE TABLE `especializacao` (
   `id_combate_grupo` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `especializacao`
+--
+
+TRUNCATE TABLE `especializacao`;
 --
 -- Despejando dados para a tabela `especializacao`
 --
@@ -1526,6 +1614,11 @@ CREATE TABLE `habilidade` (
   `possui_especializacao` int DEFAULT (0)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `habilidade`
+--
+
+TRUNCATE TABLE `habilidade`;
 --
 -- Despejando dados para a tabela `habilidade`
 --
@@ -1590,6 +1683,11 @@ CREATE TABLE `habilidade_aperfeicoadas` (
   `descricao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Tabela truncada antes do insert `habilidade_aperfeicoadas`
+--
+
+TRUNCATE TABLE `habilidade_aperfeicoadas`;
 --
 -- Despejando dados para a tabela `habilidade_aperfeicoadas`
 --
@@ -1944,6 +2042,11 @@ CREATE TABLE `habilidade_especializacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `habilidade_especializacao`
+--
+
+TRUNCATE TABLE `habilidade_especializacao`;
+--
 -- Despejando dados para a tabela `habilidade_especializacao`
 --
 
@@ -1982,6 +2085,11 @@ CREATE TABLE `habilidade_grupo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `habilidade_grupo`
+--
+
+TRUNCATE TABLE `habilidade_grupo`;
+--
 -- Despejando dados para a tabela `habilidade_grupo`
 --
 
@@ -2005,6 +2113,11 @@ CREATE TABLE `habilidade_grupo_custo` (
   `custo` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `habilidade_grupo_custo`
+--
+
+TRUNCATE TABLE `habilidade_grupo_custo`;
 --
 -- Despejando dados para a tabela `habilidade_grupo_custo`
 --
@@ -2067,6 +2180,11 @@ CREATE TABLE `linha_tempo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `linha_tempo`
+--
+
+TRUNCATE TABLE `linha_tempo`;
+--
 -- Despejando dados para a tabela `linha_tempo`
 --
 
@@ -2107,6 +2225,11 @@ CREATE TABLE `localidade` (
   `y` int DEFAULT (0)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `localidade`
+--
+
+TRUNCATE TABLE `localidade`;
 --
 -- Despejando dados para a tabela `localidade`
 --
@@ -2261,6 +2384,11 @@ CREATE TABLE `magia` (
   `niveis` text COLLATE utf8mb4_general_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `magia`
+--
+
+TRUNCATE TABLE `magia`;
 --
 -- Despejando dados para a tabela `magia`
 --
@@ -2532,43 +2660,50 @@ INSERT INTO `magia` (`id`, `nome`, `evocacao`, `alcance`, `duracao`, `descricao`
 CREATE TABLE `magia_grupo` (
   `id` int NOT NULL,
   `id_pai` int DEFAULT NULL,
-  `nome` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+  `nome` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `profissao` int DEFAULT '0',
+  `especializacao` int DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `magia_grupo`
+--
+
+TRUNCATE TABLE `magia_grupo`;
 --
 -- Despejando dados para a tabela `magia_grupo`
 --
 
-INSERT INTO `magia_grupo` (`id`, `id_pai`, `nome`) VALUES
-(1, -1, 'Rastreadores'),
-(2, -1, 'Bardos'),
-(3, -1, 'Sacerdotes'),
-(4, -1, 'Magos'),
-(5, 1, 'Trilha dos Caçadores'),
-(6, 1, 'Trilha dos Exploradores'),
-(7, 1, 'Trilha dos Guardiões'),
-(8, 2, 'Confraria dos Arautos'),
-(9, 2, 'Confraria dos Artistas'),
-(10, 2, 'Confraria dos Eruditos'),
-(11, 3, 'Ordem de Selimon'),
-(12, 3, 'Ordem de Sevides'),
-(13, 3, 'Ordem de Ganis'),
-(14, 3, 'Ordem de Parom'),
-(15, 3, 'Ordem de Crizagom'),
-(16, 3, 'Ordem de Crezir'),
-(17, 3, 'Ordem de Blator'),
-(18, 3, 'Ordem de Cruine'),
-(19, 3, 'Ordem de Cambu'),
-(20, 3, 'Ordem de Palier'),
-(21, 3, 'Ordem de Plandis'),
-(22, 3, 'Ordem de Lena'),
-(23, 3, 'Ordem de Maira'),
-(24, 4, 'Colégio Elemental'),
-(25, 4, 'Colégio Necromântico'),
-(26, 4, 'Colégio Ilusão'),
-(27, 4, 'Colégio Naturalista'),
-(28, 4, 'Colégio Alquímico'),
-(29, 4, 'Colégio Conhecimento');
+INSERT INTO `magia_grupo` (`id`, `id_pai`, `nome`, `profissao`, `especializacao`) VALUES
+(1, 5, 'Rastreadores', 1, 0),
+(2, 6, 'Bardos', 1, 0),
+(3, 3, 'Sacerdotes', 1, 0),
+(4, 4, 'Magos', 1, 0),
+(5, 27, 'Trilha dos Caçadores', 0, 1),
+(6, 28, 'Trilha dos Exploradores', 0, 1),
+(7, 29, 'Trilha dos Guardiões', 0, 1),
+(8, 30, 'Confraria dos Arautos', 0, 1),
+(9, 31, 'Confraria dos Artistas', 0, 1),
+(10, 32, 'Confraria dos Eruditos', 0, 1),
+(11, 8, 'Ordem de Selimon', 0, 1),
+(12, 9, 'Ordem de Sevides', 0, 1),
+(13, 10, 'Ordem de Ganis', 0, 1),
+(14, 11, 'Ordem de Parom', 0, 1),
+(15, 12, 'Ordem de Crizagom', 0, 1),
+(16, 13, 'Ordem de Crezir', 0, 1),
+(17, 14, 'Ordem de Blator', 0, 1),
+(18, 15, 'Ordem de Cruine', 0, 1),
+(19, 16, 'Ordem de Cambu', 0, 1),
+(20, 17, 'Ordem de Palier', 0, 1),
+(21, 18, 'Ordem de Plandis', 0, 1),
+(22, 19, 'Ordem de Lena', 0, 1),
+(23, 20, 'Ordem de Maira', 0, 1),
+(24, 21, 'Colégio Elemental', 0, 1),
+(25, 22, 'Colégio Necromântico', 0, 1),
+(26, 23, 'Colégio Ilusão', 0, 1),
+(27, 24, 'Colégio Naturalista', 0, 1),
+(28, 25, 'Colégio Alquímico', 0, 1),
+(29, 26, 'Colégio Conhecimento', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -2582,6 +2717,11 @@ CREATE TABLE `magia_grupo_custo` (
   `custo` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `magia_grupo_custo`
+--
+
+TRUNCATE TABLE `magia_grupo_custo`;
 --
 -- Despejando dados para a tabela `magia_grupo_custo`
 --
@@ -2995,73 +3135,6 @@ INSERT INTO `magia_grupo_custo` (`id_magia`, `id_magia_grupo`, `custo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `matriz_custos_sociais`
---
-
-CREATE TABLE `matriz_custos_sociais` (
-  `id` int NOT NULL,
-  `classe_social` enum('Escravo','Ex-escravo','Pessoa livre','Pequeno comerciante','Artífice','Grande comerciante','Baixa nobreza','Alta nobreza') NOT NULL,
-  `caracterizacao_alvo` enum('Contatos Comerciais','Contatos Criminosos','Contatos na Nobreza','Patrono de Guerra','Patrono Comercial','Patrono Político') NOT NULL,
-  `custo` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Despejando dados para a tabela `matriz_custos_sociais`
---
-
-INSERT INTO `matriz_custos_sociais` (`id`, `classe_social`, `caracterizacao_alvo`, `custo`) VALUES
-(1, 'Escravo', 'Contatos Comerciais', 3),
-(2, 'Escravo', 'Contatos Criminosos', 0),
-(3, 'Escravo', 'Contatos na Nobreza', 7),
-(4, 'Escravo', 'Patrono de Guerra', 1),
-(5, 'Escravo', 'Patrono Comercial', 4),
-(6, 'Escravo', 'Patrono Político', 6),
-(7, 'Ex-escravo', 'Contatos Comerciais', 2),
-(8, 'Ex-escravo', 'Contatos Criminosos', 1),
-(9, 'Ex-escravo', 'Contatos na Nobreza', 6),
-(10, 'Ex-escravo', 'Patrono de Guerra', 0),
-(11, 'Ex-escravo', 'Patrono Comercial', 3),
-(12, 'Ex-escravo', 'Patrono Político', 5),
-(13, 'Pessoa livre', 'Contatos Comerciais', 1),
-(14, 'Pessoa livre', 'Contatos Criminosos', 2),
-(15, 'Pessoa livre', 'Contatos na Nobreza', 5),
-(16, 'Pessoa livre', 'Patrono de Guerra', 1),
-(17, 'Pessoa livre', 'Patrono Comercial', 2),
-(18, 'Pessoa livre', 'Patrono Político', 4),
-(19, 'Pequeno comerciante', 'Contatos Comerciais', 0),
-(20, 'Pequeno comerciante', 'Contatos Criminosos', 3),
-(21, 'Pequeno comerciante', 'Contatos na Nobreza', 4),
-(22, 'Pequeno comerciante', 'Patrono de Guerra', 2),
-(23, 'Pequeno comerciante', 'Patrono Comercial', 1),
-(24, 'Pequeno comerciante', 'Patrono Político', 3),
-(25, 'Artífice', 'Contatos Comerciais', 1),
-(26, 'Artífice', 'Contatos Criminosos', 4),
-(27, 'Artífice', 'Contatos na Nobreza', 3),
-(28, 'Artífice', 'Patrono de Guerra', 3),
-(29, 'Artífice', 'Patrono Comercial', 0),
-(30, 'Artífice', 'Patrono Político', 2),
-(31, 'Grande comerciante', 'Contatos Comerciais', 2),
-(32, 'Grande comerciante', 'Contatos Criminosos', 5),
-(33, 'Grande comerciante', 'Contatos na Nobreza', 2),
-(34, 'Grande comerciante', 'Patrono de Guerra', 4),
-(35, 'Grande comerciante', 'Patrono Comercial', 1),
-(36, 'Grande comerciante', 'Patrono Político', 1),
-(37, 'Baixa nobreza', 'Contatos Comerciais', 3),
-(38, 'Baixa nobreza', 'Contatos Criminosos', 6),
-(39, 'Baixa nobreza', 'Contatos na Nobreza', 1),
-(40, 'Baixa nobreza', 'Patrono de Guerra', 5),
-(41, 'Baixa nobreza', 'Patrono Comercial', 2),
-(42, 'Baixa nobreza', 'Patrono Político', 0),
-(43, 'Alta nobreza', 'Contatos Comerciais', 4),
-(44, 'Alta nobreza', 'Contatos Criminosos', 7),
-(45, 'Alta nobreza', 'Contatos na Nobreza', 0),
-(46, 'Alta nobreza', 'Patrono de Guerra', 6),
-(47, 'Alta nobreza', 'Patrono Comercial', 3),
-(48, 'Alta nobreza', 'Patrono Político', 1);
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `personagem`
 --
 
@@ -3109,25 +3182,31 @@ CREATE TABLE `personagem` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `personagem`
+--
+
+TRUNCATE TABLE `personagem`;
+--
 -- Despejando dados para a tabela `personagem`
 --
 
 INSERT INTO `personagem` (`id`, `nome`, `jogador`, `image_file`, `att_intelecto`, `att_aura`, `att_carisma`, `att_forca`, `att_fisico`, `att_agilidade`, `att_percepcao`, `defesa_ativa`, `defesa_passiva`, `energia_heroica_maxima`, `energia_heroica`, `energia_fisica`, `absorcao`, `raca`, `profissao`, `especializacao`, `nivel`, `experiencia`, `pontos_habilidade`, `pontos_combate`, `pontos_arma`, `pontos_magia`, `altura`, `peso`, `idade`, `olhos`, `cabelo`, `pele`, `aparencia`, `divindade`, `classe_social`, `local_nascimento`, `historia`, `moedas_cobre`, `moedas_prata`, `moedas_ouro`) VALUES
 (1, 'Rosencrantz', '', NULL, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 1, 6, NULL, 4, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 7, 3, NULL, 3, 1, 1),
-(2, 'Guildenstern', '', NULL, 0, 3, 1, 1, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, 4, 1, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, 7, 4, NULL, 1, 2, 0),
+(2, 'Guildenstern', '', NULL, 0, 3, 1, 1, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, 1, 2, NULL, 4, 1, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 7, 7, 4, '', 1, 2, 0),
 (3, 'Odin', 'Clever', NULL, 3, 2, 2, 1, 2, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10, 7, 16, NULL, 3, 1, 2),
-(4, 'Myau', NULL, NULL, 1, 1, 1, 1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, 5, 4, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12, 7, 2, NULL, 1, 1, 1),
+(4, 'Myau', '', NULL, 0, 1, 1, 1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, 5, 4, NULL, 1, 1, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 12, 7, 2, '', 1, 1, 1),
 (5, 'Noah', '', NULL, 0, 1, 1, 1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, 2, 3, NULL, 2, 1, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 7, 5, NULL, 3, 1, 1),
-(6, 'Alis', '', NULL, 0, 3, 0, 2, 2, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, 1, 5, NULL, 1, 1, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 7, 2, NULL, 4, 0, 0),
+(6, 'Alis', '', NULL, 0, 3, 0, 2, 2, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, 1, 5, NULL, 1, 1, 0, 0, 0, 0, 175, 60, 26, 'Castanhos', 'pretos', 'clara', 'teste', 4, 7, 2, 'teste', 19, 15, 16),
 (7, 'Thorin', 'joão', NULL, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, NULL, 5, 1, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, 7, 6, NULL, 5, 0, 0),
 (8, 'Tanagrim', 'Clever', NULL, 0, 1, 2, 0, 1, 1, 1, 6, 5, 19, 19, 18, 20, 1, 1, 2, 1, 3, 14, 7, 7, 0, 185, 80, 26, 'pretos', 'preto', 'clara', 'Bruto.', 1, 7, 2, 'Saiu por aí até chegar lá.', 1, 3, 5),
-(9, 'Timothy', '', NULL, 1, 1, 2, 3, 1, 1, 2, 6, 5, 6, 6, 12, 16, 1, 4, 22, 1, 1, 12, 5, 4, 7, 177, 72, 17, 'pretos', 'preto', 'clara', 'Franzino.', 1, 7, 1, 'Estuda as artes mágicas.', 4, 1, 0),
+(9, 'Timothy', '', NULL, 0, 1, 2, 3, 1, 1, 2, 6, 5, 6, 6, 12, 16, 1, 4, 22, 5, 5, 12, 5, 4, 7, 177, 72, 17, 'pretos', 'preto', 'clara', 'Franzino.', 1, 7, 1, 'Estuda as artes mágicas.', 4, 1, 0),
 (10, 'Tariel', 'Clever', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (11, 'Vorgara', '', NULL, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 3, 4, NULL, 1, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0),
-(12, 'Thorvarag', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 'Hadar', '', NULL, 0, 3, 3, 3, 3, 3, 3, 2, 1, 18, 18, NULL, 0, 1, 1, NULL, 1, NULL, 14, 12, 10, 10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 0, 0),
-(15, 'teste', NULL, NULL, 3, 4, 3, 2, 2, 4, 5, 2, 1, 15, 15, NULL, 0, 4, 5, NULL, 1, NULL, 14, 9, 5, 10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, NULL, NULL, 5, 5, 0),
-(16, 'clever', 'clever', NULL, 3, 3, 4, 3, 3, 4, 3, 2, 1, 12, 12, NULL, 0, 6, 3, NULL, 1, NULL, 12, 9, 5, 10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, NULL, NULL, 5, 1, 0);
+(12, 'Thorvarag', '', NULL, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 6, 5, NULL, 1, NULL, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', NULL, NULL, NULL, '', 0, 0, 0),
+(13, 'Hadar', '', NULL, 0, 3, 3, 3, 3, 3, 3, 2, 1, 18, 18, NULL, 0, 1, 1, 2, 1, NULL, 14, 12, 10, 10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 0, 0),
+(15, 'teste-15', NULL, NULL, 3, 4, 3, 2, 2, 4, 5, 2, 1, 15, 15, NULL, 0, 4, 5, NULL, 1, NULL, 14, 9, 5, 10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, NULL, NULL, 5, 5, 0),
+(16, 'clever', 'clever', NULL, 3, 3, 4, 3, 3, 4, 3, 2, 1, 12, 12, NULL, 0, 6, 3, NULL, 1, NULL, 12, 9, 5, 10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, NULL, NULL, 5, 1, 0),
+(17, 'teste-17', 'clever', NULL, 1, 1, 1, 1, 1, 1, 1, 2, 1, 18, 18, 5, 10, 1, 1, 2, 5, 300, 14, 12, 10, 10, 180, 80, 30, 'pretos', 'preto', 'morena', 'forte', 4, 7, 2, 'grande e forte', 5, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -3142,6 +3221,11 @@ CREATE TABLE `personagem_caracterizacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Tabela truncada antes do insert `personagem_caracterizacao`
+--
+
+TRUNCATE TABLE `personagem_caracterizacao`;
+--
 -- Despejando dados para a tabela `personagem_caracterizacao`
 --
 
@@ -3150,8 +3234,10 @@ INSERT INTO `personagem_caracterizacao` (`id_personagem`, `id_caracterizacao`, `
 (2, 79, 2),
 (6, 2, 1),
 (6, 85, 1),
+(7, 2, 1),
 (8, 1, 1),
-(9, 1, 1);
+(9, 1, 1),
+(17, 159, 1);
 
 -- --------------------------------------------------------
 
@@ -3162,32 +3248,51 @@ INSERT INTO `personagem_caracterizacao` (`id_personagem`, `id_caracterizacao`, `
 CREATE TABLE `personagem_combate` (
   `id_personagem` int NOT NULL,
   `id_combate` int NOT NULL,
+  `grupo` int DEFAULT NULL COMMENT 'Basicas = 1, Profissao = 2 , especializacao = 3',
   `nivel` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `personagem_combate`
+--
+
+TRUNCATE TABLE `personagem_combate`;
+--
 -- Despejando dados para a tabela `personagem_combate`
 --
 
-INSERT INTO `personagem_combate` (`id_personagem`, `id_combate`, `nivel`) VALUES
-(2, 4, 1),
-(2, 20, 1),
-(2, 27, 1),
-(2, 29, 1),
-(2, 44, 1),
-(3, 4, 1),
-(3, 39, 1),
-(4, 17, 1),
-(6, 4, 1),
-(6, 10, 1),
-(6, 24, 1),
-(7, 29, 1),
-(8, 40, 1),
-(8, 50, 1),
-(9, 4, 1),
-(9, 18, 1),
-(13, 1, 1),
-(13, 2, 1);
+INSERT INTO `personagem_combate` (`id_personagem`, `id_combate`, `grupo`, `nivel`) VALUES
+(2, 4, 1, 1),
+(2, 20, 3, 1),
+(2, 27, 2, 1),
+(2, 29, 2, 1),
+(2, 44, 1, 1),
+(3, 4, 1, 1),
+(3, 39, 3, 1),
+(4, 17, 1, 1),
+(6, 4, 1, 1),
+(6, 10, 1, 1),
+(6, 24, 1, 1),
+(6, 50, 1, 1),
+(7, 29, 2, 1),
+(8, 10, 2, 1),
+(8, 14, 1, 1),
+(8, 24, 1, 1),
+(8, 39, 2, 1),
+(8, 40, 1, 1),
+(8, 45, 3, 1),
+(8, 50, 1, 1),
+(9, 4, 1, 1),
+(9, 18, 1, 1),
+(13, 1, 2, 1),
+(13, 2, 1, 1),
+(13, 4, 1, 1),
+(13, 14, 1, 1),
+(13, 20, 2, 1),
+(17, 10, 1, 1),
+(17, 14, 3, 1),
+(17, 29, 2, 1),
+(17, 51, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -3202,6 +3307,11 @@ CREATE TABLE `personagem_equipamento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `personagem_equipamento`
+--
+
+TRUNCATE TABLE `personagem_equipamento`;
+--
 -- Despejando dados para a tabela `personagem_equipamento`
 --
 
@@ -3209,6 +3319,7 @@ INSERT INTO `personagem_equipamento` (`id_personagem`, `id_equipamento`, `quanti
 (6, 1, 1),
 (6, 74, 1),
 (6, 227, 1),
+(6, 274, 1),
 (8, 9, 1),
 (8, 56, 1),
 (8, 225, 1),
@@ -3217,7 +3328,19 @@ INSERT INTO `personagem_equipamento` (`id_personagem`, `id_equipamento`, `quanti
 (9, 225, 1),
 (9, 230, 1),
 (9, 233, 1),
-(9, 236, 1);
+(9, 236, 1),
+(17, 94, 1),
+(17, 134, 1),
+(17, 178, 1),
+(17, 181, 1),
+(17, 192, 1),
+(17, 194, 1),
+(17, 226, 1),
+(17, 233, 1),
+(17, 236, 1),
+(17, 272, 1),
+(17, 277, 1),
+(17, 286, 1);
 
 -- --------------------------------------------------------
 
@@ -3231,6 +3354,11 @@ CREATE TABLE `personagem_habilidade` (
   `nivel` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `personagem_habilidade`
+--
+
+TRUNCATE TABLE `personagem_habilidade`;
 --
 -- Despejando dados para a tabela `personagem_habilidade`
 --
@@ -3251,10 +3379,22 @@ INSERT INTO `personagem_habilidade` (`id_personagem`, `id_habilidade`, `nivel`) 
 (8, 27, 1),
 (8, 31, 1),
 (9, 1, 1),
+(9, 8, 0),
+(9, 16, 0),
+(9, 20, 0),
 (9, 22, 1),
+(9, 35, 0),
+(9, 36, 0),
+(9, 39, 0),
 (13, 1, 1),
 (13, 2, 1),
-(13, 3, 1);
+(13, 3, 1),
+(17, 1, 1),
+(17, 2, 1),
+(17, 3, 1),
+(17, 5, 1),
+(17, 15, 1),
+(17, 20, 1);
 
 -- --------------------------------------------------------
 
@@ -3271,6 +3411,11 @@ CREATE TABLE `personagem_habilidade_especializacao` (
   `nivel` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `personagem_habilidade_especializacao`
+--
+
+TRUNCATE TABLE `personagem_habilidade_especializacao`;
 --
 -- Despejando dados para a tabela `personagem_habilidade_especializacao`
 --
@@ -3294,17 +3439,29 @@ INSERT INTO `personagem_habilidade_especializacao` (`id`, `id_personagem`, `id_h
 CREATE TABLE `personagem_magia` (
   `id_personagem` int NOT NULL,
   `id_magia` int NOT NULL,
+  `id_magia_grupo` int NOT NULL,
   `nivel` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `personagem_magia`
+--
+
+TRUNCATE TABLE `personagem_magia`;
+--
 -- Despejando dados para a tabela `personagem_magia`
 --
 
-INSERT INTO `personagem_magia` (`id_personagem`, `id_magia`, `nivel`) VALUES
-(9, 1, 1),
-(9, 2, 1),
-(9, 3, 1);
+INSERT INTO `personagem_magia` (`id_personagem`, `id_magia`, `id_magia_grupo`, `nivel`) VALUES
+(1, 42, 2, 0),
+(5, 224, 3, 0),
+(6, 92, 1, 0),
+(9, 35, 4, 0),
+(9, 157, 4, 0),
+(9, 168, 25, 0),
+(9, 178, 25, 0),
+(11, 198, 4, 0),
+(16, 71, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -3335,16 +3492,21 @@ CREATE TABLE `profissao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `profissao`
+--
+
+TRUNCATE TABLE `profissao`;
+--
 -- Despejando dados para a tabela `profissao`
 --
 
 INSERT INTO `profissao` (`id`, `nome`, `image_file`, `descricao`, `equipamentos_iniciais`, `moedas_cobre`, `moedas_prata`, `moedas_ouro`, `energia_heroica`, `pontos_habilidade`, `pontos_arma`, `pontos_combate`, `penalidade_habilidade_grupo`, `especialidade_habilidade`, `atributo_magia`, `id_magia_grupo`, `defesa_base`, `arma_dano_maximo`, `absorcao`) VALUES
-(1, 'Guerreiro', 'guerreiro.png', 'Tanto na realidade quanto na fantasia, muitos homens e mulheres viveram de sua capacidade de\r\ncombate. Exemplos destas pessoas são: Hércules, o rei Arthur, Conan, Roland, Siegfried, um legionário\r\nromano, um Guerreiro grego, um cavaleiro teutônico, e muitos outros que lutavam como membros de\r\num exército.', 'Armadura de couro rígido|escudo pequeno|elmo aberto|roupa comum|botas|mochila de couro|cantil|cinto', 5, 1, 0, 18, 14, 10, 12, 7, -1, -1, -1, 'L3', 16, '+18'),
-(2, 'Ladino', 'ladino.png', 'Ladinos são aventureiros que se desenvolveram como os melhores no uso de Habilidades. Isso,\r\ncombinado com seu considerável poder de combate, os fazem úteis em praticamente qualquer situação.\r\nEmbora os Ladinos possam ser muito diferentes entre si eles compartilham de duas características em\r\ncomum: versatilidade e grande capacidade de sobreviver a todo tipo de perigo.', 'Armadura de couro rígido|escudo pequeno|roupa comum|calçado comum|mochila de couro|navalha|10 pítons para alpinismo|manto com capuz|20 metros de corda', 5, 3, 0, 12, 22, 7, 12, -1, -1, -1, -1, 'L3', 12, '+16'),
-(3, 'Sacerdote', 'sacerdote.png', 'Estes Sacerdotes são parecidos com os clérigos medievais. Treinados na fé e nas armas, eles levam a\r\npalavra dos deuses a todos e lutam pela causa desses quando necessário.', 'Armadura de couro rígido|escudo pequeno|elmo aberto|roupa comum|calçado comum ou botas|mochila de couro|símbolo sagrado de ferro|água abençoada|manto com capuz|cinto|pederneiras', 5, 1, 0, 12, 12, 5, 9, 5, -1, 2, 3, 'L3', 16, '+18'),
-(4, 'Mago', 'mago.png', 'Os Magos são indivíduos voltados para o estudo de passagens e escrituras místicas. Eles se consagram\r\nintegralmente ao aprendizado de formas arcanas de conhecimento. Isso os afasta de outras atividades,\r\nprejudicando de certa forma suas habilidades em outras áreas (por exemplo, mesmo podendo usar\r\narmas, eles têm um conhecimento militar mínimo).', 'Roupa comum|calçado comum|mochila de couro|manto com capuz|cinto|pederneiras|mochila de couro|pena e tinta|pergaminho', 5, 15, 0, 6, 12, 1, 3, 6, -1, 0, 4, 'L0', 8, '0'),
-(5, 'Rastreador', 'rastreador.png', 'Estes são guerreiros que se adaptaram em viver e lutar nas florestas. Eles são de certa forma ligados às\r\nmatas e desta comunhão ganham um presente único: magias ligadas ao meio em que vivem.', 'Armadura de couro rígido|roupa comum|botas|mochila de couro|cinto|pederneiras|capa|par de luvas', 5, 5, 0, 15, 14, 5, 9, 4, -1, 6, 1, 'L2', 16, '+12'),
-(6, 'Bardo', 'bardo.png', 'Com espírito livre e fala amistosa, os Bardos se tornaram os principais veículos de informação no\r\nMundo Conhecido. Tendo na Arte o seu maior poder, eles conseguem cativar pessoas facilmente,\r\nsendo muito bem recebidos na maior parte dos reinos. Sua habilidade de lidar com pessoas é tal que os\r\nBardos se fazem muito úteis na grande maioria dos acontecimentos, desde os mais corriqueiros aos\r\nmais estrondosos.', 'Armadura de couro rígido|roupa comum|calçado comum|cinto|mochila de couro|cantil|lamparina a óleo|capa|chapéu|instrumento musical', 5, 5, 0, 9, 16, 3, 6, -1, -1, 2, 2, 'L2', 16, '+12');
+(1, 'Guerreiro', 'guerreiro.png', 'Tanto na realidade quanto na fantasia, muitos homens e mulheres viveram de sua capacidade de\r\ncombate. Exemplos destas pessoas são: Hércules, o rei Arthur, Conan, Roland, Siegfried, um legionário\r\nromano, um Guerreiro grego, um cavaleiro teutônico, e muitos outros que lutavam como membros de\r\num exército.', '[{\"equipmentId\":226,\"name\":\"Armadura de couro rígido\"},{\"equipmentId\":233,\"name\":\"Escudo pequeno\"},{\"equipmentId\":236,\"name\":\"Elmo aberto\"},{\"equipmentId\":286,\"name\":\"Roupa comum\"},{\"equipmentId\":277,\"name\":\"Botas\"},{\"equipmentId\":134,\"name\":\"Mochila de couro\"},{\"equipmentId\":94,\"name\":\"Cantil\"},{\"equipmentId\":272,\"name\":\"Cinto\"}]', 5, 1, 0, 18, 14, 10, 12, 7, -1, -1, -1, 'L3', 16, '+18'),
+(2, 'Ladino', 'ladino.png', 'Ladinos são aventureiros que se desenvolveram como os melhores no uso de Habilidades. Isso,\r\ncombinado com seu considerável poder de combate, os fazem úteis em praticamente qualquer situação.\r\nEmbora os Ladinos possam ser muito diferentes entre si eles compartilham de duas características em\r\ncomum: versatilidade e grande capacidade de sobreviver a todo tipo de perigo.', '[{\"equipmentId\":226,\"name\":\"Armadura de couro rígido\"},{\"equipmentId\":233,\"name\":\"Escudo pequeno\"},{\"equipmentId\":286,\"name\":\"Roupa comum\"},{\"equipmentId\":321,\"name\":\"Calçado comum\"},{\"equipmentId\":134,\"name\":\"Mochila de couro\"},{\"equipmentId\":138,\"name\":\"Navalha\"},{\"equipmentId\":145,\"name\":\"10 pítons para alpinismo\"},{\"equipmentId\":276,\"name\":\"Manto com capuz\"},{\"equipmentId\":100,\"name\":\"20 metros de corda\"}]', 5, 3, 0, 12, 22, 7, 12, -1, -1, -1, -1, 'L3', 12, '+16'),
+(3, 'Sacerdote', 'sacerdote.png', 'Estes Sacerdotes são parecidos com os clérigos medievais. Treinados na fé e nas armas, eles levam a\r\npalavra dos deuses a todos e lutam pela causa desses quando necessário.', '[{\"equipmentId\":226,\"name\":\"Armadura de couro rígido\"},{\"equipmentId\":233,\"name\":\"Escudo pequeno\"},{\"equipmentId\":236,\"name\":\"Elmo aberto\"},{\"equipmentId\":286,\"name\":\"Roupa comum\"},{\"equipmentId\":277,\"name\":\"Calçado comum ou botas\"},{\"equipmentId\":134,\"name\":\"Mochila de couro\"},{\"equipmentId\":154,\"name\":\"Símbolo sagrado de ferro\"},{\"equipmentId\":320,\"name\":\"Água abençoada\"},{\"equipmentId\":276,\"name\":\"Manto com capuz\"},{\"equipmentId\":272,\"name\":\"Cinto\"},{\"equipmentId\":142,\"name\":\"Pederneiras\"}]', 5, 1, 0, 12, 12, 5, 9, 5, -1, 2, 3, 'L3', 16, '+18'),
+(4, 'Mago', 'mago.png', 'Os Magos são indivíduos voltados para o estudo de passagens e escrituras místicas. Eles se consagram\r\nintegralmente ao aprendizado de formas arcanas de conhecimento. Isso os afasta de outras atividades,\r\nprejudicando de certa forma suas habilidades em outras áreas (por exemplo, mesmo podendo usar\r\narmas, eles têm um conhecimento militar mínimo).', '[{\"equipmentId\":286,\"name\":\"Roupa comum\"},{\"equipmentId\":321,\"name\":\"Calçado comum\"},{\"equipmentId\":134,\"name\":\"Mochila de couro\"},{\"equipmentId\":276,\"name\":\"Manto com capuz\"},{\"equipmentId\":272,\"name\":\"Cinto\"},{\"equipmentId\":142,\"name\":\"Pederneiras\"},{\"equipmentId\":134,\"name\":\"Mochila de couro\"},{\"equipmentId\":143,\"name\":\"Pena e tinta\"},{\"equipmentId\":144,\"name\":\"Pergaminho\"}]', 5, 15, 0, 6, 12, 1, 3, 6, -1, 0, 4, 'L0', 8, '0'),
+(5, 'Rastreador', 'rastreador.png', 'Estes são guerreiros que se adaptaram em viver e lutar nas florestas. Eles são de certa forma ligados às\r\nmatas e desta comunhão ganham um presente único: magias ligadas ao meio em que vivem.', '[{\"equipmentId\":226,\"name\":\"Armadura de couro rígido\"},{\"equipmentId\":286,\"name\":\"Roupa comum\"},{\"equipmentId\":277,\"name\":\"Botas\"},{\"equipmentId\":134,\"name\":\"Mochila de couro\"},{\"equipmentId\":272,\"name\":\"Cinto\"},{\"equipmentId\":142,\"name\":\"Pederneiras\"},{\"equipmentId\":268,\"name\":\"Capa\"},{\"equipmentId\":281,\"name\":\"Par de luvas\"}]', 5, 5, 0, 15, 14, 5, 9, 4, -1, 6, 1, 'L2', 16, '+12'),
+(6, 'Bardo', 'bardo.png', 'Com espírito livre e fala amistosa, os Bardos se tornaram os principais veículos de informação no\r\nMundo Conhecido. Tendo na Arte o seu maior poder, eles conseguem cativar pessoas facilmente,\r\nsendo muito bem recebidos na maior parte dos reinos. Sua habilidade de lidar com pessoas é tal que os\r\nBardos se fazem muito úteis na grande maioria dos acontecimentos, desde os mais corriqueiros aos\r\nmais estrondosos.', '[{\"equipmentId\":226,\"name\":\"Armadura de couro rígido\"},{\"equipmentId\":286,\"name\":\"Roupa comum\"},{\"equipmentId\":321,\"name\":\"Calçado comum\"},{\"equipmentId\":272,\"name\":\"Cinto\"},{\"equipmentId\":134,\"name\":\"Mochila de couro\"},{\"equipmentId\":94,\"name\":\"Cantil\"},{\"equipmentId\":126,\"name\":\"Lamparina a óleo\"},{\"equipmentId\":268,\"name\":\"Capa\"},{\"equipmentId\":271,\"name\":\"Chapéu\"},{\"equipmentId\":300,\"name\":\"Instrumento musical\"}]', 5, 5, 0, 9, 16, 3, 6, -1, -1, 2, 2, 'L2', 16, '+12');
 
 -- --------------------------------------------------------
 
@@ -3373,6 +3535,11 @@ CREATE TABLE `raca` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `raca`
+--
+
+TRUNCATE TABLE `raca`;
+--
 -- Despejando dados para a tabela `raca`
 --
 
@@ -3395,6 +3562,11 @@ CREATE TABLE `raca_profissao` (
   `id_profissao` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Tabela truncada antes do insert `raca_profissao`
+--
+
+TRUNCATE TABLE `raca_profissao`;
 --
 -- Despejando dados para a tabela `raca_profissao`
 --
@@ -3448,11 +3620,131 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Tabela truncada antes do insert `usuarios`
+--
+
+TRUNCATE TABLE `usuarios`;
+--
 -- Despejando dados para a tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `username`, `password_hash`, `role`, `is_active`, `created_at`) VALUES
 (1, 'admin', '$2a$11$9eqV9d4D5hSBN/w09bKcE.B6M6gaOJ4CG2EIQ9muZmejnmbq6xKSC', 'admin', 1, '2025-12-27 16:12:21');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para view `vw_magia_especializacao`
+-- (Veja abaixo para a visão atual)
+--
+CREATE TABLE `vw_magia_especializacao` (
+`id_magia` int
+,`id_prof_esp` int
+,`nome_magia` varchar(60)
+,`id_magia_grupo` int
+,`nome_grupo` varchar(100)
+,`descricao` text
+,`evocacao` varchar(40)
+,`alcance` varchar(40)
+,`duracao` varchar(60)
+,`niveis` text
+,`custo` int
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para view `vw_magia_profissao`
+-- (Veja abaixo para a visão atual)
+--
+CREATE TABLE `vw_magia_profissao` (
+`id_magia` int
+,`id_prof_esp` int
+,`nome_magia` varchar(60)
+,`id_magia_grupo` int
+,`nome_grupo` varchar(100)
+,`descricao` text
+,`evocacao` varchar(40)
+,`alcance` varchar(40)
+,`duracao` varchar(60)
+,`niveis` text
+,`custo` int
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para view `vw_tecnicas_basicas`
+-- (Veja abaixo para a visão atual)
+--
+CREATE TABLE `vw_tecnicas_basicas` (
+`id_combate` int
+,`id_prof_esp` int
+,`nome_combate` varchar(50)
+,`atributo` varchar(3)
+,`efeito` text
+,`obs` text
+,`requisitos` text
+,`quadro_rolagem` text
+,`aprimoramento` text
+,`id_combate_grupo` int
+,`nome_grupo` varchar(100)
+,`id_categoria` int
+,`nome_categoria` varchar(60)
+,`custo` int
+,`bonus` int
+,`reducao` int
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para view `vw_tecnicas_especializacao`
+-- (Veja abaixo para a visão atual)
+--
+CREATE TABLE `vw_tecnicas_especializacao` (
+`id_combate` int
+,`id_prof_esp` int
+,`nome_combate` varchar(50)
+,`atributo` varchar(3)
+,`efeito` text
+,`obs` text
+,`requisitos` text
+,`quadro_rolagem` text
+,`aprimoramento` text
+,`id_combate_grupo` int
+,`nome_grupo` varchar(100)
+,`id_categoria` int
+,`nome_categoria` varchar(60)
+,`custo` int
+,`bonus` int
+,`reducao` int
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para view `vw_tecnicas_profissao`
+-- (Veja abaixo para a visão atual)
+--
+CREATE TABLE `vw_tecnicas_profissao` (
+`id_combate` int
+,`id_prof_esp` int
+,`nome_combate` varchar(50)
+,`atributo` varchar(3)
+,`efeito` text
+,`obs` text
+,`requisitos` text
+,`quadro_rolagem` text
+,`aprimoramento` text
+,`id_combate_grupo` int
+,`nome_grupo` varchar(100)
+,`id_categoria` int
+,`nome_categoria` varchar(60)
+,`custo` int
+,`bonus` int
+,`reducao` int
+);
 
 --
 -- Índices para tabelas despejadas
@@ -3612,13 +3904,6 @@ ALTER TABLE `magia_grupo_custo`
   ADD PRIMARY KEY (`id_magia`,`id_magia_grupo`);
 
 --
--- Índices de tabela `matriz_custos_sociais`
---
-ALTER TABLE `matriz_custos_sociais`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `classe_social` (`classe_social`,`caracterizacao_alvo`);
-
---
 -- Índices de tabela `personagem`
 --
 ALTER TABLE `personagem`
@@ -3658,7 +3943,7 @@ ALTER TABLE `personagem_habilidade_especializacao`
 -- Índices de tabela `personagem_magia`
 --
 ALTER TABLE `personagem_magia`
-  ADD PRIMARY KEY (`id_personagem`,`id_magia`);
+  ADD PRIMARY KEY (`id_personagem`,`id_magia`,`id_magia_grupo`) USING BTREE;
 
 --
 -- Índices de tabela `profissao`
@@ -3726,16 +4011,10 @@ ALTER TABLE `habilidade_aperfeicoadas`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=336;
 
 --
--- AUTO_INCREMENT de tabela `matriz_custos_sociais`
---
-ALTER TABLE `matriz_custos_sociais`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
-
---
 -- AUTO_INCREMENT de tabela `personagem`
 --
 ALTER TABLE `personagem`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `personagem_habilidade_especializacao`
@@ -3748,6 +4027,51 @@ ALTER TABLE `personagem_habilidade_especializacao`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vw_magia_especializacao`
+--
+DROP TABLE IF EXISTS `vw_magia_especializacao`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_magia_especializacao`  AS SELECT `m`.`id` AS `id_magia`, `mg`.`id_pai` AS `id_prof_esp`, `m`.`nome` AS `nome_magia`, `mg`.`id` AS `id_magia_grupo`, `mg`.`nome` AS `nome_grupo`, `m`.`descricao` AS `descricao`, `m`.`evocacao` AS `evocacao`, `m`.`alcance` AS `alcance`, `m`.`duracao` AS `duracao`, `m`.`niveis` AS `niveis`, `mgc`.`custo` AS `custo` FROM ((`magia_grupo_custo` `mgc` join `magia` `m` on((`m`.`id` = `mgc`.`id_magia`))) join `magia_grupo` `mg` on((`mg`.`id` = `mgc`.`id_magia_grupo`))) WHERE (`mg`.`especializacao` = 1) ORDER BY `mg`.`id` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vw_magia_profissao`
+--
+DROP TABLE IF EXISTS `vw_magia_profissao`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_magia_profissao`  AS SELECT `m`.`id` AS `id_magia`, `mg`.`id_pai` AS `id_prof_esp`, `m`.`nome` AS `nome_magia`, `mg`.`id` AS `id_magia_grupo`, `mg`.`nome` AS `nome_grupo`, `m`.`descricao` AS `descricao`, `m`.`evocacao` AS `evocacao`, `m`.`alcance` AS `alcance`, `m`.`duracao` AS `duracao`, `m`.`niveis` AS `niveis`, `mgc`.`custo` AS `custo` FROM ((`magia_grupo_custo` `mgc` join `magia` `m` on((`m`.`id` = `mgc`.`id_magia`))) join `magia_grupo` `mg` on((`mg`.`id` = `mgc`.`id_magia_grupo`))) WHERE (`mg`.`profissao` = 1) ORDER BY `mg`.`id` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vw_tecnicas_basicas`
+--
+DROP TABLE IF EXISTS `vw_tecnicas_basicas`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_tecnicas_basicas`  AS SELECT `c`.`id` AS `id_combate`, `cg`.`id_pai` AS `id_prof_esp`, `c`.`nome` AS `nome_combate`, `c`.`atributo` AS `atributo`, `c`.`efeito` AS `efeito`, `c`.`obs` AS `obs`, `c`.`requisitos` AS `requisitos`, `c`.`quadro_rolagem` AS `quadro_rolagem`, `c`.`aprimoramento` AS `aprimoramento`, `cg`.`id` AS `id_combate_grupo`, `cg`.`nome` AS `nome_grupo`, `ctg`.`id` AS `id_categoria`, `ctg`.`nome` AS `nome_categoria`, `cgc`.`custo` AS `custo`, `c`.`bonus` AS `bonus`, `cgc`.`reducao` AS `reducao` FROM (((`combate_grupo_custo` `cgc` join `combate` `c` on((`c`.`id` = `cgc`.`id_combate`))) join `combate_grupo` `cg` on((`cg`.`id` = `cgc`.`id_combate_grupo`))) join `categoria` `ctg` on((`ctg`.`id` = `c`.`id_categoria`))) WHERE (`cg`.`basica` = 1) ORDER BY `c`.`nome` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vw_tecnicas_especializacao`
+--
+DROP TABLE IF EXISTS `vw_tecnicas_especializacao`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_tecnicas_especializacao`  AS SELECT `c`.`id` AS `id_combate`, `cg`.`id_pai` AS `id_prof_esp`, `c`.`nome` AS `nome_combate`, `c`.`atributo` AS `atributo`, `c`.`efeito` AS `efeito`, `c`.`obs` AS `obs`, `c`.`requisitos` AS `requisitos`, `c`.`quadro_rolagem` AS `quadro_rolagem`, `c`.`aprimoramento` AS `aprimoramento`, `cg`.`id` AS `id_combate_grupo`, `cg`.`nome` AS `nome_grupo`, `ctg`.`id` AS `id_categoria`, `ctg`.`nome` AS `nome_categoria`, `cgc`.`custo` AS `custo`, `c`.`bonus` AS `bonus`, `cgc`.`reducao` AS `reducao` FROM (((`combate_grupo_custo` `cgc` join `combate` `c` on((`c`.`id` = `cgc`.`id_combate`))) join `combate_grupo` `cg` on((`cg`.`id` = `cgc`.`id_combate_grupo`))) join `categoria` `ctg` on((`ctg`.`id` = `c`.`id_categoria`))) WHERE (`cg`.`especializacao` = 1) ORDER BY `cg`.`id` ASC ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vw_tecnicas_profissao`
+--
+DROP TABLE IF EXISTS `vw_tecnicas_profissao`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `vw_tecnicas_profissao`  AS SELECT `c`.`id` AS `id_combate`, `cg`.`id_pai` AS `id_prof_esp`, `c`.`nome` AS `nome_combate`, `c`.`atributo` AS `atributo`, `c`.`efeito` AS `efeito`, `c`.`obs` AS `obs`, `c`.`requisitos` AS `requisitos`, `c`.`quadro_rolagem` AS `quadro_rolagem`, `c`.`aprimoramento` AS `aprimoramento`, `cg`.`id` AS `id_combate_grupo`, `cg`.`nome` AS `nome_grupo`, `ctg`.`id` AS `id_categoria`, `ctg`.`nome` AS `nome_categoria`, `cgc`.`custo` AS `custo`, `c`.`bonus` AS `bonus`, `cgc`.`reducao` AS `reducao` FROM (((`combate_grupo_custo` `cgc` join `combate` `c` on((`c`.`id` = `cgc`.`id_combate`))) join `combate_grupo` `cg` on((`cg`.`id` = `cgc`.`id_combate_grupo`))) join `categoria` `ctg` on((`ctg`.`id` = `c`.`id_categoria`))) WHERE (`cg`.`profissao` = 1) ORDER BY `cg`.`id` ASC ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
