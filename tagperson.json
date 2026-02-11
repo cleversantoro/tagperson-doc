@@ -222,6 +222,67 @@
         }
       }
     },
+    "/api/characters/{id}/sheet": {
+      "get": {
+        "tags": [
+          "Characters"
+        ],
+        "summary": "Obtem a ficha completa do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CharacterSheetDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CharacterSheetDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CharacterSheetDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/characters": {
       "get": {
         "tags": [
@@ -308,12 +369,12 @@
         }
       }
     },
-    "/api/characters/{id}/sheet": {
-      "get": {
+    "/api/characters/{id}": {
+      "delete": {
         "tags": [
           "Characters"
         ],
-        "summary": "Obtem a ficha completa do personagem.",
+        "summary": "Exclui um personagem.",
         "parameters": [
           {
             "name": "id",
@@ -326,25 +387,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CharacterSheetDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CharacterSheetDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CharacterSheetDto"
-                }
-              }
-            }
+          "204": {
+            "description": "No Content"
           },
           "404": {
             "description": "Not Found",
@@ -367,9 +411,7 @@
             }
           }
         }
-      }
-    },
-    "/api/characters/{id}": {
+      },
       "put": {
         "tags": [
           "Characters"
@@ -430,56 +472,14 @@
             }
           }
         }
-      },
-      "delete": {
-        "tags": [
-          "Characters"
-        ],
-        "summary": "Exclui um personagem.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
       }
     },
-    "/api/characters/{id}/skills": {
+    "/api/characters_atributes/{id}/validate-attributes": {
       "post": {
         "tags": [
-          "Characters"
+          "CharactersAtributes"
         ],
-        "summary": "Adiciona habilidade ao personagem.",
+        "summary": "Valida a distribuição de atributos do personagem.",
         "parameters": [
           {
             "name": "id",
@@ -495,216 +495,41 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CharacterSkillRequestDto"
+                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CharacterSkillRequestDto"
+                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CharacterSkillRequestDto"
+                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
               }
             }
           }
         },
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/characters/{id}/combat": {
-      "post": {
-        "tags": [
-          "Characters"
-        ],
-        "summary": "Adiciona tecnica de combate ao personagem.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CharacterCombatSkillRequestDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CharacterCombatSkillRequestDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CharacterCombatSkillRequestDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/characters/{id}/skills/{skillId}/specializations": {
-      "get": {
-        "tags": [
-          "Characters"
-        ],
-        "summary": "Lista especializacoes da habilidade do personagem.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "skillId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CharacterSkillSpecializationDto"
-                  }
+                  "$ref": "#/components/schemas/AttributeDistributionResponseDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CharacterSkillSpecializationDto"
-                  }
+                  "$ref": "#/components/schemas/AttributeDistributionResponseDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CharacterSkillSpecializationDto"
-                  }
+                  "$ref": "#/components/schemas/AttributeDistributionResponseDto"
                 }
               }
             }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Characters"
-        ],
-        "summary": "Adiciona especializacao da habilidade ao personagem.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "skillId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CharacterSkillSpecializationRequestDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CharacterSkillSpecializationRequestDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CharacterSkillSpecializationRequestDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "No Content"
           },
           "404": {
             "description": "Not Found",
@@ -729,12 +554,12 @@
         }
       }
     },
-    "/api/characters/{id}/equipments": {
+    "/api/characters_atributes/{id}/apply-attributes": {
       "post": {
         "tags": [
-          "Characters"
+          "CharactersAtributes"
         ],
-        "summary": "Adiciona equipamento ao personagem.",
+        "summary": "Aplica a distribuição de atributos do personagem.",
         "parameters": [
           {
             "name": "id",
@@ -750,17 +575,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CharacterEquipmentRequestDto"
+                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CharacterEquipmentRequestDto"
+                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CharacterEquipmentRequestDto"
+                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
               }
             }
           }
@@ -812,93 +637,10 @@
         }
       }
     },
-    "/api/characters/{id}/spells": {
+    "/api/characters_characterization/{id}/characterizations": {
       "post": {
         "tags": [
-          "Characters"
-        ],
-        "summary": "Adiciona magia ao personagem.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CharacterSpellRequestDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CharacterSpellRequestDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CharacterSpellRequestDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/characters/{id}/characterizations": {
-      "post": {
-        "tags": [
-          "Characters"
+          "CharactersCharacterization"
         ],
         "summary": "Adiciona caracterização ao personagem.",
         "parameters": [
@@ -976,14 +718,12 @@
             }
           }
         }
-      }
-    },
-    "/api/characters/{id}/validate-attributes": {
-      "post": {
+      },
+      "get": {
         "tags": [
-          "Characters"
+          "CharactersCharacterization"
         ],
-        "summary": "Valida a distribuição de atributos do personagem.",
+        "summary": "Seleciona a caracterização do personagem.",
         "parameters": [
           {
             "name": "id",
@@ -995,42 +735,32 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AttributeDistributionResponseDto"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CharacterCharacterizationDto"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AttributeDistributionResponseDto"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CharacterCharacterizationDto"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AttributeDistributionResponseDto"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CharacterCharacterizationDto"
+                  }
                 }
               }
             }
@@ -1056,14 +786,64 @@
             }
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "CharactersCharacterization"
+        ],
+        "summary": "Exclui uma caracterização do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "characterizationId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
       }
     },
-    "/api/characters/{id}/apply-attributes": {
+    "/api/characters_combat/{id}/combat": {
       "post": {
         "tags": [
-          "Characters"
+          "CharactersCombat"
         ],
-        "summary": "Aplica a distribuição de atributos do personagem.",
+        "summary": "Adiciona tecnica de combate ao personagem.",
         "parameters": [
           {
             "name": "id",
@@ -1079,17 +859,206 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
+                "$ref": "#/components/schemas/CharacterCombatSkillRequestDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
+                "$ref": "#/components/schemas/CharacterCombatSkillRequestDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AttributeDistributionRequestDto"
+                "$ref": "#/components/schemas/CharacterCombatSkillRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "CharactersCombat"
+        ],
+        "summary": "Seleciona as Tecnicas de Combate do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CombatFromCharacterDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CombatFromCharacterDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CombatFromCharacterDto"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CharactersCombat"
+        ],
+        "summary": "Exclui uma Tecnica de Combate do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "combatId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "combatGroupId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/characters_equipment/{id}/equipments": {
+      "post": {
+        "tags": [
+          "CharactersEquipment"
+        ],
+        "summary": "Adiciona equipamento ao personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterEquipmentRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterEquipmentRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterEquipmentRequestDto"
               }
             }
           }
@@ -1117,6 +1086,643 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "CharactersEquipment"
+        ],
+        "summary": "Seleciona os equipamentos do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CharacterEquipmentDetailDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CharacterEquipmentDetailDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CharacterEquipmentDetailDto"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CharactersEquipment"
+        ],
+        "summary": "Exclui um equipamento do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "equipmentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/characters_especialization/{id}/skills/{skillId}/specializations": {
+      "post": {
+        "tags": [
+          "CharactersEspecialization"
+        ],
+        "summary": "Adiciona especializacao da habilidade ao personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skillId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterSkillSpecializationRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterSkillSpecializationRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterSkillSpecializationRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "CharactersEspecialization"
+        ],
+        "summary": "Lista especializacoes da habilidade do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skillId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CharacterSkillSpecializationDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CharacterSkillSpecializationDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CharacterSkillSpecializationDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/characters_skill/{id}/skills": {
+      "post": {
+        "tags": [
+          "CharactersSkill"
+        ],
+        "summary": "Adiciona habilidade ao personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterSkillRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterSkillRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterSkillRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "CharactersSkill"
+        ],
+        "summary": "Seleciona as habilidades do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SkillFromCharacterDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SkillFromCharacterDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SkillFromCharacterDto"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CharactersSkill"
+        ],
+        "summary": "Exclui uma habilidade do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skillId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/characters_spell/{id}/spells": {
+      "post": {
+        "tags": [
+          "CharactersSpell"
+        ],
+        "summary": "Adiciona magia ao personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterSpellRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterSpellRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CharacterSpellRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "CharactersSpell"
+        ],
+        "summary": "Seleciona as magias do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SpellFromCharacterDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SpellFromCharacterDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SpellFromCharacterDto"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CharactersSpell"
+        ],
+        "summary": "Exclui uma magia do personagem.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "spellId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "spellGroupId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           },
           "404": {
             "description": "Not Found",
@@ -3312,12 +3918,64 @@
       "CharacterCharacterizationDto": {
         "type": "object",
         "properties": {
-          "characterizationId": {
+          "id": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "name": {
             "type": "string",
+            "nullable": true
+          },
+          "characterizationTypeId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nameType": {
+            "type": "string",
+            "nullable": true
+          },
+          "characterizationGroupId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nameGroup": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "placeId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cost": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "isInitial": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "isRare": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "isAllowGame": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "level": {
@@ -3364,34 +4022,6 @@
         },
         "additionalProperties": false
       },
-      "CharacterCombatSkillDto": {
-        "type": "object",
-        "properties": {
-          "combatSkillId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "level": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "group": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "attributeCode": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CharacterCombatSkillRequestDto": {
         "type": "object",
         "properties": {
@@ -3399,12 +4029,16 @@
             "type": "integer",
             "format": "int32"
           },
-          "group": {
+          "combatGroupId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "level": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "level": {
+          "type": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -3412,19 +4046,23 @@
         },
         "additionalProperties": false
       },
-      "CharacterEquipmentDto": {
+      "CharacterEquipmentDetailDto": {
         "type": "object",
         "properties": {
-          "equipmentId": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "groupid": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupId": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "name": {
+          "groupName": {
             "type": "string",
             "nullable": true
           },
@@ -3432,12 +4070,11 @@
             "type": "string",
             "nullable": true
           },
-          "price": {
-            "type": "integer",
-            "format": "int32",
+          "imageFile": {
+            "type": "string",
             "nullable": true
           },
-          "qty": {
+          "price": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -3463,6 +4100,11 @@
             "nullable": true
           },
           "isHelmet": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "qty": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -3642,28 +4284,28 @@
           "skills": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CharacterSkillDto"
+              "$ref": "#/components/schemas/SkillFromCharacterDto"
             },
             "nullable": true
           },
           "spells": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CharacterSpellDto"
+              "$ref": "#/components/schemas/SpellFromCharacterDto"
             },
             "nullable": true
           },
           "combat": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CharacterCombatSkillDto"
+              "$ref": "#/components/schemas/CombatFromCharacterDto"
             },
             "nullable": true
           },
           "equipments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CharacterEquipmentDto"
+              "$ref": "#/components/schemas/CharacterEquipmentDetailDto"
             },
             "nullable": true
           },
@@ -3679,39 +4321,6 @@
             "items": {
               "$ref": "#/components/schemas/StartingEquipmentDto"
             },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CharacterSkillDto": {
-        "type": "object",
-        "properties": {
-          "skillId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "level": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "attributeCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "restricted": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "hasSpecialization": {
-            "type": "integer",
-            "format": "int32",
             "nullable": true
           }
         },
@@ -3780,37 +4389,6 @@
         },
         "additionalProperties": false
       },
-      "CharacterSpellDto": {
-        "type": "object",
-        "properties": {
-          "spellId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "level": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "evocation": {
-            "type": "string",
-            "nullable": true
-          },
-          "range": {
-            "type": "string",
-            "nullable": true
-          },
-          "duration": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CharacterSpellRequestDto": {
         "type": "object",
         "properties": {
@@ -3818,7 +4396,16 @@
             "type": "integer",
             "format": "int32"
           },
+          "spellGroupId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "level": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "type": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -3959,6 +4546,93 @@
           },
           "name": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CombatFromCharacterDto": {
+        "type": "object",
+        "properties": {
+          "combatId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "combatName": {
+            "type": "string",
+            "nullable": true
+          },
+          "attributeCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "effect": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "requisite": {
+            "type": "string",
+            "nullable": true
+          },
+          "rollTable": {
+            "type": "string",
+            "nullable": true
+          },
+          "improvement": {
+            "type": "string",
+            "nullable": true
+          },
+          "profEspId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "combatGroupId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "groupName": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "categoryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "cost": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "bonus": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "reduction": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "level": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },
@@ -4737,6 +5411,79 @@
         },
         "additionalProperties": false
       },
+      "SkillFromCharacterDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "skillGroupId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "groupName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "attributeCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "levelTest": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "restricted": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "penalties": {
+            "type": "string",
+            "nullable": true
+          },
+          "improvedTasks": {
+            "type": "string",
+            "nullable": true
+          },
+          "levelsjson": {
+            "type": "string",
+            "nullable": true
+          },
+          "bonus": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hasSpecialization": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cost": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "level": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "SkillFromGroupDto": {
         "type": "object",
         "properties": {
@@ -4865,6 +5612,14 @@
             "type": "integer",
             "format": "int32"
           },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
           "professionId": {
             "type": "integer",
             "format": "int32",
@@ -4875,13 +5630,58 @@
             "format": "int32",
             "nullable": true
           },
-          "combatGroupI": {
+          "combatGroupId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SpellFromCharacterDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "evocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "range": {
+            "type": "string",
+            "nullable": true
+          },
+          "duration": {
+            "type": "string",
+            "nullable": true
+          },
+          "effects": {
+            "type": "string",
+            "nullable": true
+          },
+          "cost": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "name": {
-            "type": "string",
+          "level": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },
@@ -4922,6 +5722,16 @@
           "effects": {
             "type": "string",
             "nullable": true
+          },
+          "isProfession": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "isEspecialization": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4948,7 +5758,7 @@
       "SpellTechniquesDto": {
         "type": "object",
         "properties": {
-          "spellId": {
+          "id": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -4958,7 +5768,7 @@
             "format": "int32",
             "nullable": true
           },
-          "spellName": {
+          "name": {
             "type": "string",
             "nullable": true
           },
@@ -4987,7 +5797,7 @@
             "type": "string",
             "nullable": true
           },
-          "levels": {
+          "effects": {
             "type": "string",
             "nullable": true
           },
